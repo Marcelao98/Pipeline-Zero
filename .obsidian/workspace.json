@@ -11,12 +11,10 @@
             "id": "d767b2edc7854edb",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "LIVROS- ISSO VAI NO GITIGNORE/Fundamentals of Data Engineering (Reis, JoeHousley, Matt) (Z-Library).pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Fundamentals of Data Engineering (Reis, JoeHousley, Matt) (Z-Library)"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nova aba"
             }
           }
         ]
@@ -188,6 +186,21 @@
   },
   "active": "d767b2edc7854edb",
   "lastOpenFiles": [
+    "2-onde-o-dado-mora/02-sql-consultando-dado.md",
+    "2-onde-o-dado-mora/01-bancos-de-dados-relacionais-e-sql.md",
+    "2-onde-o-dado-mora",
+    "1-que-porra-e-essa/02-o-ciclo-de-vida-da-engenharia-de-dados.md",
+    "1-que-porra-e-essa/03-por-onde-comecar-o-roadmap.md",
+    "1-que-porra-e-essa/01-o-que-e-engenharia-de-dados.md",
+    "1-que-porra-e-essa",
+    "onde-o-dado-mora/02-sql-consultando-dado.md",
+    "1-onde-o-dado-mora/01-bancos-de-dados-relacionais-e-sql.md",
+    "1-onde-o-dado-mora/02-sql-consultando-dado.md",
+    "1-onde-o-dado-mora",
+    "0-claude/fluxo-claude-code-obsidian.md",
+    "0-claude/contexto-projeto.pdf",
+    "0-claude",
+    "onde-o-dado-mora/01-bancos-de-dados-relacionais-e-sql.md",
     "1 - Introdução/02-o-ciclo-de-vida-da-engenharia-de-dados.md",
     "README.md",
     "1 - Introdução/01-o-que-e-engenharia-de-dados.md",
@@ -196,10 +209,6 @@
     "CONTEXTO DO CLAUDE",
     "Nova pasta",
     "contexto-projeto.pdf",
-    "LIVROS- ISSO VAI NO GITIGNORE/Fundamentals of Data Engineering (Reis, JoeHousley, Matt) (Z-Library).pdf",
-    "LIVROS- ISSO VAI NO GITIGNORE",
-    "Fundamentals of Data Engineering (Reis, JoeHousley, Matt) (Z-Library).pdf",
-    "Fundamentals of Data Engineering (Reis, JoeHousley, Matt) (Z-Library).pdf.crdownload",
-    "1 - Introdução"
+    "LIVROS- ISSO VAI NO GITIGNORE/Fundamentals of Data Engineering (Reis, JoeHousley, Matt) (Z-Library).pdf"
   ]
 }
