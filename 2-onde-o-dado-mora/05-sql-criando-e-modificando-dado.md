@@ -11,17 +11,23 @@ Vamos criar uma tabela nova pra loja: `avaliacoes`, guardando a avaliação que 
 ```sql
 CREATE TABLE avaliacoes (
     id_avaliacao INT PRIMARY KEY,
-    id_cliente INT,
-    id_produto INT,
-    nota INT,
+    id_cliente INT NOT NULL,
+    id_produto INT NOT NULL,
+    nota INT NOT NULL,
     comentario TEXT,
-    data_avaliacao DATE
+    data_avaliacao DATE DEFAULT CURRENT_DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
 ```
 
 Repara na estrutura: cada linha dentro dos parênteses é uma coluna, seguida do tipo de dado que ela vai guardar. `INT` é número inteiro, sem casa decimal, usado aqui em `id_avaliacao`, `id_cliente`, `id_produto` e `nota`. `TEXT` é texto livre, de tamanho variável, usado no `comentario`. `DATE` é data, usado em `data_avaliacao`. Existe também o `DECIMAL`, pra número com casa decimal, que a gente já vem usando desde o capítulo 2 em `valor_total` e `preco`, só que essa tabela aqui não precisou dele. Não vou entrar em todos os tipos de dado que existem, esses já cobrem a maioria do que você vai precisar no início.
 
+Reparou no `NOT NULL` depois de `id_cliente`, `id_produto` e `nota`? Isso diz pro banco que essas colunas não podem ficar vazias: toda avaliação precisa ter um cliente, um produto e uma nota, sem exceção, senão o `INSERT` é recusado. `comentario` ficou de fora do `NOT NULL` de propósito, porque faz sentido um cliente dar só a nota, sem escrever nada. Já `data_avaliacao` ganhou um `DEFAULT CURRENT_DATE`: se ninguém informar a data na hora de inserir, o banco preenche sozinho com a data de hoje, em vez de deixar a coluna vazia.
+
 E o `PRIMARY KEY` depois de `id_avaliacao` é a mesma chave primária que a gente já conhece desde o capítulo 1: marca aquela coluna como o identificador único de cada linha dessa tabela.
+
+Tem mais uma peça nova ali no fim: as duas linhas de `FOREIGN KEY`. Lá no capítulo 1 a gente aprendeu o conceito de chave estrangeira, a coluna que aponta pra chave primária de outra tabela, sem duplicar a informação inteira. Nos exemplos anteriores desse módulo, esse apontamento sempre foi conceitual: a gente sabia que `id_cliente` em `pedidos` correspondia a `clientes`, mas nunca tinha declarado isso formalmente pro banco. Aqui, sim: `FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)` diz explicitamente que todo `id_cliente` inserido em `avaliacoes` precisa existir de verdade na tabela `clientes`. O mesmo vale pra `id_produto` apontando pra `produtos`. Isso impede, por exemplo, inserir uma avaliação pra um cliente que não existe, o banco recusaria o `INSERT`.
 
 Feito isso, a tabela `avaliacoes` existe, mas está vazia. Nenhuma linha nela ainda.
 
