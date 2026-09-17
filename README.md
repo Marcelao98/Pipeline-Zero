@@ -43,20 +43,24 @@ Os diagramas deste repositório usam [Mermaid](https://mermaid.js.org/), que ren
 ```
 .
 ├── README.md
-└── que-porra-e-essa/
-    ├── 01-o-que-e-engenharia-de-dados.md
-    ├── 02-o-ciclo-de-vida-da-engenharia-de-dados.md
-    └── 03-por-onde-comecar-o-roadmap.md
+├── 1-que-porra-e-essa/
+│   ├── 01-o-que-e-engenharia-de-dados.md
+│   ├── 02-o-ciclo-de-vida-da-engenharia-de-dados.md
+│   └── 03-por-onde-comecar-o-roadmap.md
+└── 2-onde-o-dado-mora/
+    ├── 01-bancos-de-dados-relacionais-e-sql.md
+    ├── 02-sql-consultando-dado.md
+    └── 03-sql-agregando-e-agrupando-dado.md
 ```
 
-**`que-porra-e-essa/`** é o módulo zero, o ponto de partida. Ele responde: o que é engenharia de dados, como ela se diferencia de análise de dados e ciência de dados, qual o ciclo de vida que todo dado percorre numa empresa, e um roadmap prático de por onde começar a estudar.
+**`1-que-porra-e-essa/`** é o módulo zero, o ponto de partida. Ele responde: o que é engenharia de dados, como ela se diferencia de análise de dados e ciência de dados, qual o ciclo de vida que todo dado percorre numa empresa, e um roadmap prático de por onde começar a estudar.
+
+**`2-onde-o-dado-mora/`** é o módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados relacional e por que ele existe, e depois entra na sintaxe de SQL na prática: consultar dado (`SELECT`, `WHERE`, `ORDER BY`, `LIMIT`) e agregar e agrupar dado (`COUNT`, `SUM`, `GROUP BY`, `HAVING`).
 
 ### Próximos módulos planejados
 
 Ainda não escritos, mas já com o lugar deles reservado no roadmap:
 
-- Bancos de dados relacionais (antes de SQL propriamente dito)
-- SQL
 - Python (um resumo enxuto de lógica e sintaxe, não um curso completo)
 - Git e controle de versão
 - Orquestração (Airflow)
