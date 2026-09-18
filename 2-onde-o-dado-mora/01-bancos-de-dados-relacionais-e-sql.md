@@ -80,4 +80,4 @@ Fazer isso na mão, abrindo arquivo e contando linha por linha, seria uma tortur
 
 Então é isso: banco de dados relacional é onde o dado mora, organizado em tabela, linha e coluna, conectado por chave primária e chave estrangeira. E SQL é a linguagem que existe pra você conversar com esse banco, descrevendo o que você quer sem precisar ensinar o banco a fazer o trabalho pesado.
 
-No próximo capítulo a gente entra de fato na sintaxe: como escrever uma consulta SQL de verdade, do zero, com exemplo prático rodando.
+No próximo capítulo a gente vai falar sobre instalação: qual programa efetivamente executa o SQL, quais são as principais opções do mercado, e como deixar um banco rodando na sua própria máquina.
