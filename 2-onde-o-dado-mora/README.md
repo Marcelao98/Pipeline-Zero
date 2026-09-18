@@ -9,3 +9,4 @@ Módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados rel
 5. [Juntando tabelas](05-juntando-tabelas.md) — `JOIN`, pra cruzar dado que está espalhado em mais de uma tabela.
 6. [Criando e modificando dado](06-criando-e-modificando-dado.md) — `CREATE TABLE`, `INSERT`, `UPDATE` e `DELETE`, pra criar estrutura e alterar dado, não só lê-lo.
 7. [Subqueries](07-subqueries.md) — consulta dentro de outra consulta, pra responder pergunta que depende de um resultado intermediário calculado antes.
+8. [CTE](08-cte.md) — `WITH`, um jeito de nomear passo intermediário e ler a consulta de cima pra baixo, em vez de aninhar subquery dentro de subquery.
