@@ -262,4 +262,4 @@ Três jeitos diferentes de escrever viraram um só. Agora o computador enxerga o
 
 String é o tipo que guarda texto, e é nele que mora a maior parte da sujeira que você vai encontrar em dado real. Dá pra pegar pedaço de texto por posição com indexação e fatiamento, e limpar com métodos como `.strip()`, `.upper()`, `.lower()`, `.replace()`, `.split()` e `.join()`, lembrando sempre de guardar o resultado de volta na variável. O `in` confere se um trecho existe no texto, e a f-string é o jeito padrão de encaixar variável dentro de uma frase. E esses métodos são literais: a ordem importa, e maiúscula é diferente de minúscula.
 
-No próximo capítulo a gente entra na próxima peça do bloco de fundamento: **estrutura de controle**, ou seja, como fazer o programa tomar decisão (condicional) e repetir uma ação várias vezes (loop).
+No próximo capítulo a gente entra na próxima peça do bloco de fundamento: **comparação e condicional**, ou seja, como fazer o programa tomar decisão.
