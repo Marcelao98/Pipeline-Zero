@@ -10,3 +10,6 @@ Módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados rel
 6. [Criando e modificando dado](06-criando-e-modificando-dado.md) — `CREATE TABLE`, `INSERT`, `UPDATE` e `DELETE`, pra criar estrutura e alterar dado, não só lê-lo.
 7. [Subqueries](07-subqueries.md) — consulta dentro de outra consulta, pra responder pergunta que depende de um resultado intermediário calculado antes.
 8. [CTE](08-cte.md) — `WITH`, um jeito de nomear passo intermediário e ler a consulta de cima pra baixo, em vez de aninhar subquery dentro de subquery.
+9. [Window functions](09-window-functions.md) — `OVER`, `PARTITION BY` e `ORDER BY`, pra calcular métrica em cima de um grupo de linha sem perder a linha individual.
+10. [Transações](10-transacoes.md) — `BEGIN`, `COMMIT` e `ROLLBACK`, pra tratar várias operações de escrita como uma unidade só, tudo ou nada.
+11. [Pra onde ir daqui](11-proximos-passos.md) — fechamento do módulo: recursos pra continuar estudando, e como sair do tutorial e partir pra um projeto próprio.

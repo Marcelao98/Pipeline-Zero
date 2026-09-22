@@ -44,21 +44,34 @@ Os diagramas deste repositório usam [Mermaid](https://mermaid.js.org/), que ren
 .
 ├── README.md
 ├── 1-que-porra-e-essa/
-└── 2-onde-o-dado-mora/
+├── 2-onde-o-dado-mora/
+└── 3-python/
 ```
 
 - **[1-que-porra-e-essa/](1-que-porra-e-essa/README.md)** é o módulo zero, o ponto de partida. Ele responde: o que é engenharia de dados, como ela se diferencia de análise de dados e ciência de dados, qual o ciclo de vida que todo dado percorre numa empresa, e um roadmap prático de por onde começar a estudar.
 - **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)** é o módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados relacional e por que ele existe, e depois entra na sintaxe de SQL na prática.
+- **[3-python/](3-python/README.md)** é o módulo de Python. Um resumo enxuto, focado só no que serve pra engenharia de dados: fundamentos da linguagem e Python aplicado a dado. Não é um curso completo de Python.
 
 ### Próximos módulos planejados
 
 Ainda não escritos, mas já com o lugar deles reservado no roadmap:
 
-- Python (um resumo enxuto de lógica e sintaxe, não um curso completo)
 - Git e controle de versão
 - Orquestração (Airflow)
 - Nuvem (cloud)
 - Lista curada de recursos e links úteis em português
+
+## Transparência sobre como esse conteúdo é escrito
+
+Isso também merece ser dito com a mesma honestidade do resto desse README: o texto desse repositório não é escrito inteiramente à mão, mas também não é gerado sem controle nenhum. Ele é escrito com assistência de IA, através de um processo manual, capítulo por capítulo.
+
+O processo funciona assim: a decisão do que ensinar, em que ordem, com qual exemplo, é sempre minha, tomada antes de qualquer texto ser gerado. A IA entra na etapa de execução, como ferramenta de escrita, mas cada capítulo é lido e revisado por mim, linha por linha, antes de ir pro ar, e ainda passa por uma camada de revisão adicional depois disso.
+
+Por que fazer assim, e não escrever tudo manualmente do zero? Honestamente, porque escrever cada capítulo inteiramente à mão consumiria muito mais tempo do que eu tenho disponível pra manter esse projeto vivo, sozinho, nas horas vagas. Esse processo é o que torna viável esse repositório continuar crescendo.
+
+Pra ser direto sobre a ferramenta: eu uso o Claude Code pra escrever. Se você tiver qualquer dúvida sobre como esse processo funciona, abre uma issue e eu respondo.
+
+E um lembrete importante, nesse mesmo tom: IA é uma ferramenta extremamente útil, mas é só isso, uma ferramenta. Ela precisa de direcionamento humano o tempo todo, e não substitui a decisão de conteúdo nem o julgamento de qualidade, que continuam sendo meus, do início ao fim.
 
 ## Como contribuir
 
