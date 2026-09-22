@@ -22,6 +22,19 @@ nome_cliente = 'Ana'
 
 Aqui `nome_cliente` é o nome da variável, `=` é o comando que atribui o valor a ela (não é "igual" no sentido matemático, é "guarda isso aqui dentro"), e `'Ana'` é o valor guardado. A partir desse momento, toda vez que você usar `nome_cliente` no código, Python entende que você está falando de `'Ana'`.
 
+## Recebendo valor de quem usa o programa
+
+Até aqui o valor da variável foi escrito na mão, direto no código. Mas uma variável também pode guardar algo que a pessoa digita na hora em que o programa roda. Pra isso existe o `input()`:
+
+```python
+nome_cliente = input('Qual o nome do cliente? ')
+print(nome_cliente)
+```
+
+Quando você roda isso, o programa mostra a pergunta `Qual o nome do cliente?` e fica esperando. Você digita um nome, aperta Enter, e o que você digitou vai parar dentro de `nome_cliente`. Depois o `print()` mostra esse valor na tela.
+
+Repara que a variável continua sendo a mesma coisa de antes: um espaço nomeado que guarda um valor. A única diferença é de onde o valor vem. Em vez de um valor fixo escrito por você no código, ele vem de quem está usando o programa.
+
 ## Que problema isso resolve
 
 Sem variável, duas coisas ficam difíceis. Primeiro, se você precisa do mesmo valor em vários pontos do código, tem que digitar ele de novo em cada lugar, e se esse valor mudar, você precisa caçar e trocar em todos os lugares onde escreveu na mão. Segundo, e mais importante: sem variável não tem como guardar o resultado de um cálculo pra usar mais adiante.
@@ -63,6 +76,16 @@ Isso dá `5`. Mas "somar" dois textos com o mesmo sinal `+` é outra coisa compl
 
 Isso dá `'maçã'`, ou seja, junta os dois textos em vez de somar. É o mesmo símbolo `+`, mas o comportamento muda de acordo com o tipo do dado. Por isso o tipo importa, mesmo que a gente não precise declarar ele na mão (mais sobre isso já já).
 
+Já que o assunto é conta, esses são os operadores matemáticos básicos de Python (os exemplos usam `7` e `2`):
+
+- `+` soma: `7 + 2` dá `9`.
+- `-` subtração: `7 - 2` dá `5`.
+- `*` multiplicação: `7 * 2` dá `14`.
+- `/` divisão: `7 / 2` dá `3.5`.
+- `//` divisão inteira (joga fora a parte decimal): `7 // 2` dá `3`.
+- `%` resto da divisão: `7 % 2` dá `1`.
+- `**` potência: `7 ** 2` dá `49` (sete ao quadrado).
+
 ## Tipagem dinâmica: Python descobre o tipo sozinho
 
 Em algumas linguagens, como Java ou C, você precisa declarar o tipo de cada variável na mão antes de usar ela. Em Python isso não é necessário: você só atribui o valor, e o próprio Python descobre o tipo sozinho, olhando pra o que você escreveu.
@@ -92,8 +115,10 @@ print(nome_cliente, 'pediu', quantidade_pedido, 'unidade(s), valor total de', va
 Rodando isso, a tela mostra:
 
 ```
-Ana pediu 3 unidade(s), valor total de 89.7
+Ana pediu 3 unidade(s), valor total de 89.69999999999999
 ```
+
+Repara que o resultado não é exatamente `89.7`, é `89.69999999999999`. Isso é normal, e tem a ver com como o computador representa número decimal por trás dos panos. Não é erro seu nem bug do código, acontece em qualquer linguagem que usa float.
 
 Repara que a variável `valor_total` guardou o resultado de um cálculo (quantidade vezes preço), e esse resultado foi reaproveitado dentro do `print()` mais adiante. É exatamente o problema que variável resolve, na prática.
 
