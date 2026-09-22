@@ -126,4 +126,4 @@ Repara que a variável `valor_total` guardou o resultado de um cálculo (quantid
 
 Variável é um espaço nomeado que guarda valor pra reaproveitar depois, e todo valor tem um tipo (string, int, float ou bool) que define como ele se comporta numa operação. Python usa tipagem dinâmica, então você não declara o tipo na mão, o próprio Python descobre sozinho.
 
-No próximo capítulo a gente entra na próxima peça do bloco de fundamento: **estrutura de controle**, ou seja, como fazer o programa tomar decisão (condicional) e repetir uma ação várias vezes (loop).
+No próximo capítulo a gente olha com mais calma pra um desses tipos: **texto (string)**, que é onde mora a maior parte da sujeira que você vai encontrar em dado real, e como limpar ele.

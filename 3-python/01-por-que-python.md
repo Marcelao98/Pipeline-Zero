@@ -59,6 +59,7 @@ O básico pra você conseguir ler e escrever um script sem se perder.
 
 - **Preparando o terreno:** instalar o Python e um lugar confortável pra escrever código.
 - **Variável e tipo de dado:** como guardar informação num programa e que tipos de informação existem.
+- **Texto (string):** como pegar pedaço de texto, limpar e padronizar, e encaixar variável dentro de uma frase.
 - **Estrutura de controle:** como fazer o programa decidir e repetir coisas.
 - **Função:** como empacotar um pedaço de lógica pra reaproveitar.
 - **Estrutura de dado (lista e dicionário):** como guardar vários valores juntos e organizados.
