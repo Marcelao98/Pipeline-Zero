@@ -6,7 +6,7 @@ Este arquivo é lido automaticamente sempre que o Claude Code abre este reposit�
 
 Pipeline Zero é um repositório público, em português, que ensina engenharia de dados por narrativa: por que cada ferramenta/conceito existe e que problema resolve, antes de "como usar". Escrito pelo Marcelo, que é eletricista migrando pra dados por conta própria, não um especialista de mercado. O tom é informal, direto, primeira pessoa, sem "corporativês", sem travessão no texto corrido.
 
-Contexto completo (motivação, princípios do projeto) está em `contexto-projeto.pdf`. Convenções de formatação e passo a passo operacional estão em `0-claude/fluxo-claude-code-obsidian.md`. Leia os dois antes de escrever qualquer conteúdo novo, se ainda não tiver o contexto da sessão.
+Contexto completo (motivação, princípios do projeto) está em `0-claude/contexto-projeto.pdf`. O processo de produção (papéis, ordem do fluxo por capítulo) está em `0-claude/fluxo-de-producao-pipeline-zero.md`, as analogias decididas estão em `0-claude/analogias-narrativas-pipeline-zero.md`, e o histórico de decisões está em `0-claude/jornal-pipeline-zero.md`. Convenções de formatação estão na seção "Convenções fixas do repositório" mais abaixo. Leia isso antes de escrever qualquer conteúdo novo, se ainda não tiver o contexto da sessão.
 
 ## Qual é o seu papel aqui
 
