@@ -61,8 +61,8 @@ O básico pra você conseguir ler e escrever um script sem se perder.
 - **Variável e tipo de dado:** como guardar informação num programa e que tipos de informação existem.
 - **Texto (string):** como pegar pedaço de texto, limpar e padronizar, e encaixar variável dentro de uma frase.
 - **Estrutura de controle:** como fazer o programa decidir e repetir coisas.
+- **Estrutura de dado (lista, tupla, dicionário e set):** como guardar vários valores juntos e organizados.
 - **Função:** como empacotar um pedaço de lógica pra reaproveitar.
-- **Estrutura de dado (lista e dicionário):** como guardar vários valores juntos e organizados.
 - **Tratamento de erro:** o que fazer quando algo dá errado no meio da execução.
 - **Ambiente e pacote (pip, ambiente virtual):** como instalar biblioteca de outras pessoas sem bagunçar a sua máquina.
 
