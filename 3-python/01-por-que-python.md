@@ -1,4 +1,4 @@
-# Python: o canivete suíço da engenharia de dados
+# Python: a caixa de ferramentas do engenheiro de dados
 
 No módulo anterior a gente entendeu onde o dado mora e como conversar com ele usando SQL. Agora vem o próximo passo do roadmap, e ele tem um motivo pra estar exatamente nessa posição. SQL é excelente pra guardar, consultar e transformar dado que já está dentro de um banco. Só que o ciclo de vida da engenharia de dados começa antes disso (o dado precisa chegar até o banco) e termina depois (o dado precisa ser entregue pra alguém). E tem muita lógica no meio do caminho que SQL sozinho não resolve, ou não resolve de forma elegante. Pra isso, a gente precisa de uma linguagem de programação de verdade, e a escolha praticamente unânime da área é Python.
 
@@ -20,11 +20,15 @@ Existem várias linguagens de programação, então a pergunta é justa. Sem ent
 
 Vou ser sincero sobre o trade-off, no mesmo tom do roadmap do módulo 1: Python não é a linguagem mais rápida do mundo. C e Java rodam mais rápido em muita situação. Só que, pra maior parte do trabalho de engenharia de dados, o gargalo raramente é a velocidade da linguagem em si, e a vantagem de escrever rápido e ter biblioteca pronta compensa de longe.
 
-## A analogia do canivete suíço
+## A analogia da caixa de ferramentas
 
 Lembra das cinco etapas do ciclo de vida, lá do capítulo 2 do módulo 1? Geração, armazenamento, ingestão, transformação e disponibilização. Cada uma tem ferramentas que são melhores nela do que Python. Pra armazenar, um banco de dados relacional é melhor. Pra transformar dado dentro de um banco, SQL costuma ser mais direto. Pra entregar dado em relatório visual, existem ferramentas próprias pra isso.
 
-Então por que Python, e não uma ferramenta especializada por etapa? Porque Python funciona como um **canivete suíço**. Um canivete não é a melhor faca, nem a melhor tesoura, nem o melhor abridor de lata. Mas ele tem tudo isso na mesma peça, e é por isso que você o leva na mochila. Python é a linguagem que mais aparece ao longo de todo o ciclo, não por ser a melhor em alguma etapa isolada, mas por conseguir dar conta de um pouco de cada uma.
+Então por que Python, e não uma ferramenta especializada por etapa? Você já deve ter ouvido Python sendo chamado de canivete suíço por aí. A imagem pega, mas não é tão precisa assim. Canivete faz tudo meio capenga: a lâmina não corta como faca de verdade, a tesourinha mal dá conta de uma unha, e ninguém em sã consciência abre uma lata de molho com aquele abridor se tiver outra opção na gaveta. Essa não é a força do Python.
+
+A imagem mais honesta é a de uma **caixa de ferramentas**. Todo profissional tem a sua, e nenhuma caixa cobre tudo que existe no mundo. A do eletricista não é a do encanador, que não é a de quem mexe com carro. Ninguém carrega a caixa de ferramentas do universo inteiro, até porque isso nem existe. Python é assim: quase nunca é a melhor ferramenta pra uma tarefa isolada e específica, mas serve pra montar praticamente qualquer caixa que você precisar.
+
+E isso deixa o recorte desse módulo bem mais claro. Ele não vai te entregar "a caixa inteira de Python", porque a linguagem é usada pra tudo e essa caixa não fecha nunca. Vai te entregar a caixa do encanador: as ferramentas de quem constrói e mantém os canos por onde o dado passa, lembrando lá do capítulo 1 do módulo 1. Python não é a água nem o cano. É o que está na mão de quem constrói e cuida do sistema.
 
 ```mermaid
 flowchart TB
@@ -83,6 +87,6 @@ Também tem um assunto que fica de fora de propósito: **programação orientada
 
 ## Fechando esse capítulo
 
-Então é isso: Python é uma linguagem de propósito geral, legível e com ecossistema gigante, e é a que mais aparece ao longo de todo o ciclo de vida da engenharia de dados. Não é a melhor em nenhuma etapa isolada, mas funciona como o canivete suíço que você leva pra qualquer uma delas. E o módulo está dividido em fundamento da linguagem e Python aplicado a dado, cortando tudo que não serve pra área.
+Então é isso: Python é uma linguagem de propósito geral, legível e com ecossistema gigante, e é a que mais aparece ao longo de todo o ciclo de vida da engenharia de dados. Não é a melhor em nenhuma etapa isolada, mas é a caixa de onde sai a ferramenta certa pra cada uma delas, e aqui a gente monta só a caixa do encanador. E o módulo está dividido em fundamento da linguagem e Python aplicado a dado, cortando tudo que não serve pra área.
 
 No próximo capítulo a gente prepara o terreno: instala o Python e o VS Code na sua máquina, pra conseguir começar a parte prática.

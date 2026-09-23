@@ -1,5 +1,11 @@
 # Variável e tipo de dado: como o programa guarda informação
 
+Tem uma frase que você já deve ter ouvido por aí, tão repetida que virou clichê: "a única constante é a mudança." Ela é atribuída a Heráclito, um filósofo grego que viveu uns 500 anos antes de Cristo. Não precisa de aula de filosofia pra seguir esse capítulo, só esse contexto já basta.
+
+Além dessa, Heráclito tem outra ainda mais famosa: "ninguém se banha duas vezes no mesmo rio." A ideia é simples: o nome do rio continua o mesmo, é sempre "o rio", mas a água que passa por ele nunca é a mesma duas vezes.
+
+E o que isso tem a ver com o que a gente vai aprender hoje? Tudo. O nome do rio, que não muda, é a ideia de **constante**: algo que, depois de definido, não deveria mudar. A água, que muda sempre, é a ideia de **variável**: algo que pode ser reatribuído a qualquer momento. Só que, tecnicamente, Python não tem constante de verdade. Outras linguagens têm uma palavra reservada pra isso, Python não. O que existe é uma convenção entre programadores Python: escrever nome de constante em CAIXA_ALTA (tipo `PI = 3.14`) só pra sinalizar visualmente "isso aqui não deveria ser reatribuído", mesmo que o Python, por baixo dos panos, não impeça ninguém de fazer isso.
+
 No capítulo anterior a gente preparou o terreno, com o Python e o VS Code instalados e funcionando. Agora começa a parte prática de verdade, e o primeiro passo do bloco de fundamento é entender como um programa guarda informação. É a base de tudo que vem depois.
 
 ## Hello World
