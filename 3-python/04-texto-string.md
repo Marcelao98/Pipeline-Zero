@@ -117,15 +117,34 @@ print(equipamento)  # Bomba 01
 
 ### .upper() e .lower(): padronizando maiúscula e minúscula
 
-`.upper()` deixa tudo maiúsculo e `.lower()` deixa tudo minúsculo. Não importa muito qual dos dois você escolhe, o que importa é escolher um e aplicar em tudo:
+`.upper()` deixa tudo maiúsculo e `.lower()` deixa tudo minúsculo. Não importa muito qual dos dois você escolhe, o que importa é escolher um e aplicar em tudo.
+
+Vou aproveitar e trazer outro dado comum de planta: vibração. Um dos jeitos mais usados de acompanhar a saúde de uma bomba é medir o quanto ela está tremendo, porque desbalanceamento, desalinhamento e rolamento gasto costumam aparecer ali antes de virar uma quebra de verdade. Não precisa entender de unidade de medida nem nada mais técnico que isso por enquanto, só que é um número que os leituristas registram pra cada equipamento.
+
+Imagina três bombas diferentes da mesma planta, cada uma com seu valor de vibração, e cada técnico anotando o nome do jeito que quis:
 
 ```python
-print('Bomba 01'.upper())  # BOMBA 01
-print('bomba 01'.upper())  # BOMBA 01
-print('BOMBA 01'.upper())  # BOMBA 01
+bomba_1 = ' Bomba 1 '
+vibracao_1 = 4.2
+
+bomba_2 = 'bomba 2'
+vibracao_2 = 7.8
+
+bomba_3 = 'BB 3'
+vibracao_3 = 3.1
+
+print(bomba_1.upper(), vibracao_1)
+print(bomba_2.upper(), vibracao_2)
+print(bomba_3.upper(), vibracao_3)
 ```
 
-Três técnicos diferentes, um resultado só.
+```
+ BOMBA 1  4.2
+BOMBA 2 7.8
+BB 3 3.1
+```
+
+Repara que o `.upper()` resolveu só a letra: o espaço sobrando da bomba 1 e a abreviação diferente da bomba 3 continuam do jeito que estavam. É raro uma ferramenta só dar conta de toda a sujeira de uma vez, e é por isso que a lista de métodos continua.
 
 ### .replace(): trocando um trecho por outro
 
