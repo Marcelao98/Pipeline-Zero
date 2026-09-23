@@ -40,7 +40,7 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 6. Função
 7. Estrutura de dado: lista e dicionário (+ menção breve a tupla, set, list comprehension)
 8. Tratamento de erro (try/except)
-9. ~~Ambiente e pacote (pip, ambiente virtual — só pra bibliotecas externas, não pra instalar o interpretador)~~ — **removido**: o Bloco 1 não instala nenhuma biblioteca, então não tinha necessidade. `pip install` entra no Bloco 2, no primeiro capítulo que precisar de biblioteca. No lugar, o Bloco 1 fecha com um capítulo de respiro (`10-fim-do-bloco-1.md`).
+9. ~~Ambiente e pacote (pip, ambiente virtual — só pra bibliotecas externas, não pra instalar o interpretador)~~ — **removido**: o Bloco 1 não instala nenhuma biblioteca, então não tinha necessidade. `pip install` entra no Bloco 2, no primeiro capítulo que precisar de biblioteca. No lugar, o Bloco 1 fecha com um capítulo de respiro (`1-chave-de-fenda/09-fim-do-bloco-1.md`).
 
 **Bloco 2 — Python aplicado a dado:**
 10. Ler e escrever arquivo
@@ -56,7 +56,8 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 - Bug encontrado no capítulo 3 (`03-variavel-e-tipo-de-dado.md`): o exemplo prático afirma que `3 * 29.90` resulta em `89.7`, mas o resultado real impresso é `89.69999999999999`. Instrução de correção enviada (reconhecer o resultado real no texto e explicar que é representação de ponto flutuante, não erro do leitor). **[correção enviada, confirmação de aplicação pendente]**
 - Decisão de trocar os exemplos do Bloco 2 pra usar o domínio profissional real do autor (engenharia elétrica, manutenção de planta industrial, paralelo com o projeto pessoal Riverflow) em vez de dataset genérico de loja online. **[adiado — "vamos escrever como tá primeiro"]**
 - Gancho de abertura do capítulo 3 (`03-variavel-e-tipo-de-dado.md`) com Heráclito: "a única constante é a mudança" e "ninguém se banha duas vezes no mesmo rio" (nome do rio = constante, água = variável), mais a convenção de CAIXA_ALTA pra constante em Python. O rio de Heráclito é analogia própria, separada da analogia mestra de água/encanamento, então não fere a regra de não esticar a mestra pro módulo de Python. **[decidido, escrito]**
-- Bloco 1 ganha nome definitivo: **"A chave de fenda"** (a ferramenta mais básica da caixa, que todo mundo conhece e já usou), substituindo o provisório "arroz com feijão". Aparece no README do módulo e no fechamento do bloco (`10-fim-do-bloco-1.md`). **[decidido, escrito]**
+- Bloco 1 ganha nome definitivo: **"A chave de fenda"** (a ferramenta mais básica da caixa, que todo mundo conhece e já usou), substituindo o provisório "arroz com feijão". Aparece no README do módulo e no fechamento do bloco (`1-chave-de-fenda/09-fim-do-bloco-1.md`). **[decidido, escrito]**
+- Bloco 1 separado em subpasta própria, `3-python/1-chave-de-fenda/`, com os capítulos renumerados a partir de 01 dentro dela (o antigo 02 virou 01, e assim por diante). O capítulo 1 (por que Python) fica na raiz do módulo, porque apresenta os dois blocos. As referências "capítulo N" dentro do texto foram ajustadas pra nova numeração. Os números citados nas entradas acima deste jornal são da numeração antiga. **[decidido, feito]**
 - Revisão da abertura da seção "Ferramenta certa pra cada serviço" (capítulo 2 do módulo 3-python/), mantida separada do gancho do capítulo 3, pra tratar em rodada à parte. **[pendente]**
 
 ## 5. Módulo Excel — futuro, ainda não iniciado

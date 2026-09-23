@@ -76,7 +76,7 @@ ficha_godofredo['PV'] = 30
 print(ficha_godofredo['PV'])  # 30
 ```
 
-É o mesmo `=` de guardar valor em variável, do capítulo 3. Se a chave já existe, o valor dela é trocado. E se a chave **não** existe, o Python cria ela na hora:
+É o mesmo `=` de guardar valor em variável, do capítulo 2. Se a chave já existe, o valor dela é trocado. E se a chave **não** existe, o Python cria ela na hora:
 
 ```python
 ficha_godofredo['Cavalo'] = 'Pé de Pano'
@@ -116,7 +116,7 @@ Colchetes por fora, itens separados por vírgula. E repara em duas coisas que s�
 
 ### Indexação: a mochila começa do zero
 
-Pra pegar um item, é igualzinho à indexação da string, lá do capítulo 4. Colchete com a posição, e a contagem começa do **0**:
+Pra pegar um item, é igualzinho à indexação da string, lá do capítulo 3. Colchete com a posição, e a contagem começa do **0**:
 
 ```python
 print(mochila[0])   # Espada
@@ -154,7 +154,7 @@ print(mochila)
 
 Repara que só **uma** poção sumiu. O `.remove()` tira o primeiro item igual que encontrar e para por aí. Faz sentido: ele tomou uma poção, não as duas.
 
-E tem uma diferença importante em relação aos métodos de string. Lembra do aviso do capítulo 4, de que o método de string não altera o texto original e você precisa guardar o resultado de volta na variável? Com o `.append()` e o `.remove()` é o contrário: eles **alteram a própria lista**, direto. Não precisa (e nem deve) escrever `mochila = mochila.append(...)`.
+E tem uma diferença importante em relação aos métodos de string. Lembra do aviso do capítulo 3, de que o método de string não altera o texto original e você precisa guardar o resultado de volta na variável? Com o `.append()` e o `.remove()` é o contrário: eles **alteram a própria lista**, direto. Não precisa (e nem deve) escrever `mochila = mochila.append(...)`.
 
 A lista é, disparado, a estrutura mais usada do dia a dia. Toda vez que você tiver "vários de uma mesma coisa" (várias leituras, várias bombas, vários nomes), é bem provável que eles morem numa lista. E, juntando com o dicionário, aparece um formato que você vai ver o tempo todo: uma lista de dicionários, onde cada dicionário é um registro. É basicamente uma tabela inteira dentro do Python.
 
@@ -365,7 +365,7 @@ O que sobrou na bolsa da princesa:
 True
 ```
 
-Cada estrutura fez o papel dela. A **lista** guardou a bolsa da princesa, e o `in` do capítulo de string, junto com o `if` do capítulo 5, encontrou o filhote lá dentro. O `.remove()` tirou ele de lá. O **dicionário** teve o humor do Brasa atualizado pela chave. O **set** ganhou um título novo (e, se o Godofredo ajudar mais dragões por aí, esse título nunca vai aparecer duplicado). A **tupla** guiou todo mundo até a caverna, que continua exatamente onde sempre esteve. E o `enumerate()` numerou o que sobrou na bolsa.
+Cada estrutura fez o papel dela. A **lista** guardou a bolsa da princesa, e o `in` do capítulo de string, junto com o `if` do capítulo 4, encontrou o filhote lá dentro. O `.remove()` tirou ele de lá. O **dicionário** teve o humor do Brasa atualizado pela chave. O **set** ganhou um título novo (e, se o Godofredo ajudar mais dragões por aí, esse título nunca vai aparecer duplicado). A **tupla** guiou todo mundo até a caverna, que continua exatamente onde sempre esteve. E o `enumerate()` numerou o que sobrou na bolsa.
 
 O filhote voltou pro ninho, o Brasa soltou uma fumacinha feliz, e a princesa... bom, a princesa vai ter que explicar pro rei por que chegou no baile sem bichinho de estimação. E o Sir Godofredo desceu a montanha com o título novo, jurando que desde o começo tinha desconfiado da história.
 

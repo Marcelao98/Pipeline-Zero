@@ -99,7 +99,7 @@ for numero in range(5):
 4
 ```
 
-Duas coisas pra reparar. Começou do `0`, igual o índice da string no capítulo 4. E parou no `4`, não no `5`. Isso porque **o stop não entra no resultado**. É exatamente a mesma pegadinha do fatiamento, lembra? `tag[6:11]` pegava do 6 até o 10. Aqui é igual: `range(5)` vai do 0 até o 4. São cinco números no total, que é o que importa quando você só quer repetir algo cinco vezes.
+Duas coisas pra reparar. Começou do `0`, igual o índice da string no capítulo 3. E parou no `4`, não no `5`. Isso porque **o stop não entra no resultado**. É exatamente a mesma pegadinha do fatiamento, lembra? `tag[6:11]` pegava do 6 até o 10. Aqui é igual: `range(5)` vai do 0 até o 4. São cinco números no total, que é o que importa quando você só quer repetir algo cinco vezes.
 
 **Start e stop.** Se você quer começar de outro lugar, passa os dois:
 

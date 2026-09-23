@@ -42,7 +42,7 @@ Traduzindo: "divisão por zero". O chuveiro queimou, ninguém tomou banho, a qua
 
 É o chuveiro que parou de funcionar e ninguém fez nada a respeito ainda. A água está fria, o banho acabou, e vai continuar assim até alguém ir lá mexer.
 
-E aqui vai uma notícia boa: você já tomou erro nesse módulo, mais de uma vez. O `IndentationError` do capítulo 5, quando faltou o recuo. O `TypeError` do capítulo 7, quando alguém tentou mudar a caverna do Brasa de lugar. O `NameError` do capítulo 8, quando o suco não saiu da cozinha. Tudo isso era exceção, só não tinha ganhado esse nome ainda.
+E aqui vai uma notícia boa: você já tomou erro nesse módulo, mais de uma vez. O `IndentationError` do capítulo 4, quando faltou o recuo. O `TypeError` do capítulo 6, quando alguém tentou mudar a caverna do Brasa de lugar. O `NameError` do capítulo 7, quando o suco não saiu da cozinha. Tudo isso era exceção, só não tinha ganhado esse nome ainda.
 
 ## Os defeitos mais comuns
 
@@ -50,7 +50,7 @@ Todo técnico de manutenção tem a lista dos defeitos que mais aparecem. Resist
 
 ### ValueError: o valor não serve
 
-Lembra da mochila do Sir Godofredo, lá do capítulo 7? Depois de mais umas rabadas do Brasa, as poções de cura acabaram. Só que o Godofredo, que não conta nada, tenta tomar mais uma:
+Lembra da mochila do Sir Godofredo, lá do capítulo 6? Depois de mais umas rabadas do Brasa, as poções de cura acabaram. Só que o Godofredo, que não conta nada, tenta tomar mais uma:
 
 ```python
 mochila = ['Espada', 'Escudo', 'Corda', 'Pão velho']
@@ -119,7 +119,7 @@ Nenhum banho hoje, o chuveiro queimou. Não dá pra calcular a média.
 Programa continua.
 ```
 
-Dá pra ler quase em português: "**tenta** (try) fazer isso aqui. Se der `ZeroDivisionError`, **em vez de parar tudo** (except), faz aquilo ali". A estrutura é a mesma do `if` do capítulo 5: dois pontos no final da linha, e o que pertence a cada parte vai recuado embaixo dela.
+Dá pra ler quase em português: "**tenta** (try) fazer isso aqui. Se der `ZeroDivisionError`, **em vez de parar tudo** (except), faz aquilo ali". A estrutura é a mesma do `if` do capítulo 4: dois pontos no final da linha, e o que pertence a cada parte vai recuado embaixo dela.
 
 O que acontece por dentro:
 
@@ -179,7 +179,7 @@ except:
 Acabou a poção.
 ```
 
-O problema real aqui é um `NameError` (não existe nada chamado `mochla`), aquele mesmo do capítulo 8. Mas o `except` genérico engoliu o erro e mostrou a mensagem da poção. O programa **mentiu pra você**. E você vai passar meia hora procurando por que a poção acabou, sendo que o defeito era uma letra faltando.
+O problema real aqui é um `NameError` (não existe nada chamado `mochla`), aquele mesmo do capítulo 7. Mas o `except` genérico engoliu o erro e mostrou a mensagem da poção. O programa **mentiu pra você**. E você vai passar meia hora procurando por que a poção acabou, sendo que o defeito era uma letra faltando.
 
 É o eletricista que, pra qualquer problema na casa, desliga o disjuntor geral. Lâmpada queimada? Desliga o geral. Tomada solta? Desliga o geral. Curto-circuito? Desliga o geral. Resolver, até resolve, mas ele nunca sabe qual era o defeito de verdade, e a casa inteira fica no escuro por causa de uma lâmpada.
 
@@ -201,7 +201,7 @@ print(ficha_godofredo.get('Mana'))
 None
 ```
 
-Em vez de quebrar, o `.get()` devolve `None`, aquele "nada" do capítulo 8. A chave não existe, e ele simplesmente te avisa disso sem parar o programa.
+Em vez de quebrar, o `.get()` devolve `None`, aquele "nada" do capítulo 7. A chave não existe, e ele simplesmente te avisa disso sem parar o programa.
 
 E fica melhor: dá pra dizer o que ele deve devolver quando a chave não existir, passando um segundo valor:
 
@@ -212,7 +212,7 @@ print(ficha_godofredo.get('PV', 0))    # 30
 
 Se a chave existe, vem o valor dela (o PV continua 30). Se não existe, vem o valor que você escolheu (mana zero, que é exatamente quanto mana o Godofredo tem). Sem try, sem except, sem erro nenhum.
 
-E a mochila? Pra ela você já conhece a preventiva desde o final do capítulo 7, só não sabia que era isso. Antes de tirar o filhote de dragão da bolsa da princesa, o código conferia com `if 'Filhote de dragão' in inventario_princesa:`. Confere antes, tira depois. Se não estiver lá, o `.remove()` nem é chamado, e o `ValueError` nunca acontece.
+E a mochila? Pra ela você já conhece a preventiva desde o final do capítulo 6, só não sabia que era isso. Antes de tirar o filhote de dragão da bolsa da princesa, o código conferia com `if 'Filhote de dragão' in inventario_princesa:`. Confere antes, tira depois. Se não estiver lá, o `.remove()` nem é chamado, e o `ValueError` nunca acontece.
 
 Então, quando for possível checar antes, checa. O try/except fica pros casos em que não dá pra prever, ou em que checar seria mais trabalhoso do que tratar.
 
@@ -258,9 +258,9 @@ O `pass` é a palavra do Python pra "não faz nada". Então o erro acontece e...
 
 ## Exemplo prático: o sensor que manda lixo
 
-Lembra do exemplo do final do capítulo 6? As leituras de vibração chegavam numa lista, e quando aparecia um `'ERRO'` no meio, o `break` parava **tudo**. As leituras que vinham depois do erro nunca eram processadas. Na época era o que dava pra fazer. Agora dá pra fazer melhor.
+Lembra do exemplo do final do capítulo 5? As leituras de vibração chegavam numa lista, e quando aparecia um `'ERRO'` no meio, o `break` parava **tudo**. As leituras que vinham depois do erro nunca eram processadas. Na época era o que dava pra fazer. Agora dá pra fazer melhor.
 
-Dessa vez, as leituras chegam do jeito que dado de verdade costuma chegar: uma lista de dicionários (o formato de "tabela dentro do Python" do capítulo 7), com a vibração vindo como texto, do jeito que o sensor manda. E, claro, com defeito no meio:
+Dessa vez, as leituras chegam do jeito que dado de verdade costuma chegar: uma lista de dicionários (o formato de "tabela dentro do Python" do capítulo 6), com a vibração vindo como texto, do jeito que o sensor manda. E, claro, com defeito no meio:
 
 ```python
 leituras = [
@@ -339,15 +339,15 @@ Sensores pra conferir: ['BOMBA 02', 'BOMBA 03']
 Acompanhando leitura por leitura:
 
 - **BOMBA 01:** o `.get()` acha a vibração, o `float()` transforma `'4.2'` em número, e segue o caminho normal.
-- **BOMBA 02:** o `.get()` acha a vibração, mas ela é `'#&%'`. O `float()` dá `ValueError`, o `except` anota a bomba na lista de defeito, e o `continue` do capítulo 6 pula pra próxima leitura.
+- **BOMBA 02:** o `.get()` acha a vibração, mas ela é `'#&%'`. O `float()` dá `ValueError`, o `except` anota a bomba na lista de defeito, e o `continue` do capítulo 5 pula pra próxima leitura.
 - **BOMBA 03:** aqui nem tem a chave `'Vibração'`. Se o código usasse `leitura['Vibração']`, ia dar `KeyError` e parar tudo. Mas o `.get()` preveniu: devolveu o valor padrão `''` (texto vazio), o `float('')` deu `ValueError`, e caiu no mesmo `except` da BOMBA 02. Dois defeitos diferentes, um conserto só.
 - **BOMBA 04 e 05:** caminho normal, uma em alerta e uma tranquila.
 
-E a diferença pro capítulo 6 está justamente aí: o defeito no meio da lista **não parou o processamento**. As duas bombas depois dele foram lidas normalmente, e as leituras com defeito não sumiram em silêncio, foram anotadas pra alguém ir conferir o sensor.
+E a diferença pro capítulo 5 está justamente aí: o defeito no meio da lista **não parou o processamento**. As duas bombas depois dele foram lidas normalmente, e as leituras com defeito não sumiram em silêncio, foram anotadas pra alguém ir conferir o sensor.
 
 E a função `mostrar_media()`? Com três leituras boas, ela só calcula e mostra. Mas imagina o dia em que **todos** os sensores mandarem lixo. Aí `validas` fica em zero, e sem o try/except dentro da função o programa ia quebrar com aquele `ZeroDivisionError` do começo do capítulo, bem no finalzinho, depois de ter processado tudo. Com o try/except, ela só avisa que não tem média pra mostrar.
 
-Olha quanta coisa trabalhando junto: o **try/except** com erro específico em dois lugares, o **`.get()`** com valor padrão prevenindo o `KeyError`, a **lista de dicionários** do capítulo 7, o **`for`** e o **`continue`** do capítulo 6, o **`if`/`else`** do capítulo 5, e uma **função** com docstring do capítulo 8. Cinco leituras ou cinco mil, com defeito ou sem, o programa vai até o fim.
+Olha quanta coisa trabalhando junto: o **try/except** com erro específico em dois lugares, o **`.get()`** com valor padrão prevenindo o `KeyError`, a **lista de dicionários** do capítulo 6, o **`for`** e o **`continue`** do capítulo 5, o **`if`/`else`** do capítulo 4, e uma **função** com docstring do capítulo 7. Cinco leituras ou cinco mil, com defeito ou sem, o programa vai até o fim.
 
 ## Fechando esse capítulo
 

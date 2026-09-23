@@ -10,7 +10,7 @@ Escrever uma vez, repetir sempre que precisar, variando só o que muda. Guarda e
 
 ### O que existia antes
 
-Sem função, o jeito de repetir um pedaço de código é o de sempre: copiar e colar. É o mesmo problema da abertura do capítulo 6, só que pior. Lá era uma linha repetida. Aqui são blocos inteiros, de cinco, dez, vinte linhas, colados em vários lugares do programa.
+Sem função, o jeito de repetir um pedaço de código é o de sempre: copiar e colar. É o mesmo problema da abertura do capítulo 5, só que pior. Lá era uma linha repetida. Aqui são blocos inteiros, de cinco, dez, vinte linhas, colados em vários lugares do programa.
 
 E o problema de verdade aparece no dia em que você precisa mudar alguma coisa. Descobriu que o bolo fica melhor com 45 minutos de forno em vez de 40? Agora você precisa achar **todos** os lugares onde colou aquele bloco e corrigir um por um. Esqueceu um? Aquele bolo sai cru, e ninguém sabe por quê.
 
@@ -22,7 +22,7 @@ Além de evitar repetição, a função organiza. Um programa de duzentas linhas
 
 ### Você já usa função (e nem sabia)
 
-Aqui vai uma revelação: você usa função desde o capítulo 3. O `print()` é uma função. O `input()` também. E o `range()`, o `enumerate()`, o `set()`... todos são receitas que alguém já escreveu, deixou prontas, e você só chama pelo nome, colocando entre parênteses o que ela precisa.
+Aqui vai uma revelação: você usa função desde o capítulo 2. O `print()` é uma função. O `input()` também. E o `range()`, o `enumerate()`, o `set()`... todos são receitas que alguém já escreveu, deixou prontas, e você só chama pelo nome, colocando entre parênteses o que ela precisa.
 
 Você nunca precisou saber **como** o `print()` faz pra mostrar texto na tela. Só precisou saber o nome dele e o que passar pra ele. A novidade desse capítulo é que agora você vai escrever as suas próprias receitas.
 
@@ -309,9 +309,9 @@ Olha quanta coisa trabalhando junto aqui dentro:
 
 - O `def` com três **parâmetros**, dois deles com **valor padrão**.
 - A **docstring** no topo, explicando a receita.
-- A **lista** de ingredientes, do capítulo 7, montada com f-string, do capítulo 4.
-- O **`for`** do capítulo 6 passando por cada ingrediente.
-- O **`if`, `elif` e `else`** do capítulo 5 escolhendo a cobertura pelo sabor.
+- A **lista** de ingredientes, do capítulo 6, montada com f-string, do capítulo 3.
+- O **`for`** do capítulo 5 passando por cada ingrediente.
+- O **`if`, `elif` e `else`** do capítulo 4 escolhendo a cobertura pelo sabor.
 - O **`return`** entregando o bolo pronto pra fora da cozinha.
 
 E nas chamadas: o primeiro bolo usou só o sabor e deixou o resto no padrão. O segundo mudou os ovos e o tempo com **argumento nomeado**. Os dois resultados foram guardados em variáveis e só no final viraram frase na tela. A `ingredientes` e a `cobertura`, que só existem dentro da função, ficaram na cozinha, como tem que ser.

@@ -22,7 +22,7 @@ Se você já mexeu com Excel, talvez já tenha usado a ideia sem saber o nome. A
 
 ## Comparação: verdadeiro ou falso
 
-Antes de decidir qualquer coisa, o programa precisa responder uma pergunta de sim ou não. "Está chovendo?" "A temperatura passou de 80?" "Esse texto é igual àquele?" Pra fazer essas perguntas, existem os **operadores de comparação**. Usando `7` e `2` de novo, igual na lista de operadores matemáticos do capítulo 3:
+Antes de decidir qualquer coisa, o programa precisa responder uma pergunta de sim ou não. "Está chovendo?" "A temperatura passou de 80?" "Esse texto é igual àquele?" Pra fazer essas perguntas, existem os **operadores de comparação**. Usando `7` e `2` de novo, igual na lista de operadores matemáticos do capítulo 2:
 
 - `==` igual a: `7 == 2` dá `False`.
 - `!=` diferente de: `7 != 2` dá `True`.
@@ -31,7 +31,7 @@ Antes de decidir qualquer coisa, o programa precisa responder uma pergunta de si
 - `>=` maior ou igual a: `7 >= 7` dá `True`.
 - `<=` menor ou igual a: `7 <= 2` dá `False`.
 
-Repara no resultado de cada uma. Não é número, não é texto. É sempre `True` (verdadeiro) ou `False` (falso). Lembra do **booleano** (`bool`), o quarto tipo básico lá do capítulo 3? Na hora ele parecia meio sem utilidade, mas é aqui que ele entra em cena: **toda comparação devolve um booleano**. E dá pra guardar esse resultado numa variável, igual qualquer outro valor:
+Repara no resultado de cada uma. Não é número, não é texto. É sempre `True` (verdadeiro) ou `False` (falso). Lembra do **booleano** (`bool`), o quarto tipo básico lá do capítulo 2? Na hora ele parecia meio sem utilidade, mas é aqui que ele entra em cena: **toda comparação devolve um booleano**. E dá pra guardar esse resultado numa variável, igual qualquer outro valor:
 
 ```python
 chance_de_chuva = 70
@@ -41,7 +41,7 @@ print(vai_chover)  # True
 
 Guarda bem essa ideia, porque o resto do capítulo inteiro se apoia nela: uma comparação é uma pergunta, e a resposta é sempre `True` ou `False`.
 
-Agora, um aviso que vale ouro, porque essa é a confusão número 1 de quem está começando: **`=` e `==` são coisas completamente diferentes**. Um `=` sozinho guarda um valor na variável (é o "guarda isso aqui dentro" do capítulo 3). Dois `==` comparam se dois valores são iguais. Trocar um pelo outro é um erro que todo mundo comete, e mais de uma vez.
+Agora, um aviso que vale ouro, porque essa é a confusão número 1 de quem está começando: **`=` e `==` são coisas completamente diferentes**. Um `=` sozinho guarda um valor na variável (é o "guarda isso aqui dentro" do capítulo 2). Dois `==` comparam se dois valores são iguais. Trocar um pelo outro é um erro que todo mundo comete, e mais de uma vez.
 
 E comparar texto também funciona, com um detalhe que você já conhece do capítulo anterior:
 
