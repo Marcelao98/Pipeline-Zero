@@ -42,7 +42,7 @@ Caso particular da analogia mestra — o reservatório é a etapa de armazenamen
 
 Python não é canivete suíço. Canivete suíço carrega uma implicação ruim: cada função dele é capenga, a lâmina de canivete não corta como faca de verdade — e essa não é a força real do Python. A força do Python pra dado é ser a caixa que você abre e lá dentro tem a ferramenta certa pra cada etapa: `pandas` pra tabela, `requests` pra API, `psycopg2`/`SQLAlchemy` pra banco. Quem faz o trabalho pesado geralmente é a biblioteca, não a linguagem sozinha.
 
-- **Bloco 1** (nome provisório: "arroz com feijão"): aprender a segurar as ferramentas básicas de qualquer caixa — variável, condicional, função, o fundamento de qualquer linguagem.
+- **Bloco 1** ("A chave de fenda", substitui o provisório "arroz com feijão"): a ferramenta mais básica da caixa, que todo mundo conhece e todo mundo já usou. Aprender a segurar as ferramentas básicas de qualquer caixa — variável, condicional, função, o fundamento de qualquer linguagem.
 - **Bloco 2**: tirar da caixa as ferramentas específicas de dado — pandas, numpy, conexão com banco, consumo de API. (Nome do bloco ainda em aberto — "cozinha industrial" foi proposto quando a analogia central era "a cozinha", que foi substituída por esta; precisa de nome novo ou pode ficar sem sub-nome.)
 
 Analogias de capítulo já travadas dentro do Bloco 1 (essas não mudam com a troca acima, são independentes):

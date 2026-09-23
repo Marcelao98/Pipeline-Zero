@@ -68,7 +68,6 @@ O básico pra você conseguir ler e escrever um script sem se perder.
 - **Estrutura de dado (lista, tupla, dicionário e set):** como guardar vários valores juntos e organizados.
 - **Função:** como empacotar um pedaço de lógica pra reaproveitar.
 - **Tratamento de erro:** o que fazer quando algo dá errado no meio da execução.
-- **Ambiente e pacote (pip, ambiente virtual):** como instalar biblioteca de outras pessoas sem bagunçar a sua máquina.
 
 ### Bloco 2: Python aplicado a dado
 
