@@ -10,6 +10,8 @@ Eu não sou formado em Ciência da Computação. Sou engenheiro eletricista, e d
 
 Se você fala inglês fluente (e eu falo), a internet gringa tem uma quantidade absurda de cursos, blogs, vídeos e documentações sobre engenharia de dados. Só que isso vira um novo problema: ninguém te entrega um "comece por aqui". Você vira garimpeiro. Um vídeo indiano ótimo sobre Airflow, um post de blog perdido sobre modelagem de dados, um curso caro que promete tudo e entrega pouco. Você aprende, mas aprende os pedaços soltos, sem saber como eles se conectam.
 
+Eu vivi isso. Virei madrugada inteira assistindo vídeo de criador indiano no YouTube, ótimos, de verdade, tentando entender um conceito que hoje eu consigo explicar em duas páginas. E não foi porque faltou inteligência ou disciplina da minha parte. Foi porque não existia um mapa. Acredito que ninguém deveria precisar virar madrugada sozinho pra aprender o básico do básico, e é exatamente isso que esse projeto tenta resolver pra quem vier depois de mim.
+
 E tem um segundo problema, mais grave: **para quem não tem inglês fluente, essa barreira nem chega a ser "difícil de organizar", é uma parede**. A pessoa simplesmente não acessa 90% do que existe de bom sobre o assunto. E eu não acho isso certo. Conhecimento técnico de qualidade não deveria depender de você falar outro idioma.
 
 ### A proposta desse projeto
@@ -22,7 +24,8 @@ Alguns princípios que guiam como isso vai ser feito:
 - **Prioridade máxima para conteúdo em português.** Sempre que existir um material bom em português (vídeo, artigo, curso), ele vai ser priorizado e linkado aqui.
 - **Quando não existir substituto em português, eu linko o conteúdo em inglês mesmo assim.** Não faz sentido esconder um recurso bom só porque está no idioma errado. Quando possível, pretendo entrar em contato com os criadores desses conteúdos (incluindo criadores indianos, que produzem um material técnico excelente sobre engenharia de dados) para pedir permissão de tradução e upload legendado ou dublado.
 - **Narrativa, não lista de tecnologias.** Cada módulo conta uma história: por que aquela ferramenta ou conceito surgiu, que problema ela resolveu, o que existia antes e por que não era suficiente. Não é "aprenda SQL porque sim", é "veja por que SQL precisou existir".
-- **Conhecimento deveria ser gratuito.** Esse é o princípio por trás de tudo isso.
+- **Conhecimento deveria ser gratuito.** Não é discurso bonito, é o princípio por trás de cada decisão desse projeto: se existe uma forma de tirar alguém do zero sem cobrar nada por isso, essa é a forma que eu vou escolher.
+- **Ensino técnico não precisa ser sem graça.** Sempre que fizer sentido, esse guia vai usar analogia de coisa que eu gosto de verdade (culinária, música, jogo eletrônico, RPG de mesa, entre outras) pra explicar conceito técnico. Isso é de propósito, não enfeite: acho que aprender fica mais fácil, e mais gostoso, quando o conceito gruda em alguma coisa que já faz sentido pra você.
 
 ### O caos que esse projeto tenta resolver
 
@@ -52,10 +55,17 @@ Os diagramas deste repositório usam [Mermaid](https://mermaid.js.org/), que ren
 - **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)** é o módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados relacional e por que ele existe, e depois entra na sintaxe de SQL na prática.
 - **[3-python/](3-python/README.md)** é o módulo de Python. Um resumo enxuto, focado só no que serve pra engenharia de dados: fundamentos da linguagem e Python aplicado a dado. Não é um curso completo de Python.
 
+### Estado atual do conteúdo
+
+- **[1-que-porra-e-essa/](1-que-porra-e-essa/README.md)**: completo.
+- **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)**: completo.
+- **[3-python/](3-python/README.md)**: Bloco 1 (fundamento da linguagem) completo. Bloco 2 (Python aplicado a dado) ainda não escrito.
+
 ### Próximos módulos planejados
 
 Ainda não escritos, mas já com o lugar deles reservado no roadmap:
 
+- Excel (fórmulas, PROCV/PROCX, tabela dinâmica, gráfico)
 - Git e controle de versão
 - Orquestração (Airflow)
 - Nuvem (cloud)

@@ -10,6 +10,9 @@ Registro histórico de todas as decisões tomadas sobre o projeto até aqui, org
 - Estrutura narrativa fixa por capítulo: o que é → que problema resolve → o que existia antes e por que não era suficiente → trade-offs/quando não usar → exemplo prático. **[decidido]**
 - Autor não é profissional de dados atuante — isso é tratado como recurso de autenticidade, não como fraqueza a esconder. **[decidido]**
 - Transparência sobre uso de IA: seção no README raiz explicando que o conteúdo é escrito com assistência de IA (Claude Code), mas com processo humano de revisão em cada etapa — "IA é ferramenta, não quem decide". **[decidido, escrito]**
+- Tom pessoal no README raiz: parágrafo novo na seção "O problema não é a falta de material. É a falta de mapa." contando a experiência do autor (madrugadas assistindo vídeo de criador indiano, "não existia um mapa"). **[decidido, escrito]**
+- Princípio "Conhecimento deveria ser gratuito" reforçado no README raiz: não é discurso, é critério de decisão ("se existe uma forma de tirar alguém do zero sem cobrar nada, essa é a forma que eu vou escolher"). **[decidido, escrito]**
+- Novo princípio no README raiz: **"Ensino técnico não precisa ser sem graça"**. Analogias de coisas que o autor gosta de verdade (culinária, música, jogo eletrônico, RPG de mesa) são escolha deliberada, não enfeite. **[decidido, escrito]**
 
 ## 2. Estrutura do repositório
 
@@ -64,6 +67,7 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 
 - Ordem de produção: SQL → Python → Excel (decidido explicitamente duas vezes). **[decidido]**
 - Escopo mínimo definido: fórmula básica/referência, PROCV, PROCX/XLOOKUP, filtrar/ordenar, tabela dinâmica, gráfico. VBA e Power Query **excluídos**. **[decidido]**
+- Excel entra como primeiro item de "Próximos módulos planejados" no README raiz (fórmulas, PROCV/PROCX, tabela dinâmica, gráfico). **[decidido, escrito]**
 - Formato de produção: planilha `.xlsx` funcional como companion, viável de automatizar agora (skill `xlsx` disponível); prints de UI ficam pra depois (manual); vídeo fica pra mais tarde ainda, dependendo de encontrar um colaborador de edição de vídeo. **[decidido]**
 
 ## 6. Processo de trabalho (humano no loop)
@@ -76,7 +80,7 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 ## 7. Prontidão para divulgação (LinkedIn)
 
 - Recomendação dada: SQL e Python completos já são barra suficiente pra divulgar oficialmente — não é necessário esperar Git, Airflow ou Nuvem. **[recomendação dada, aguardando SQL+Python completos]**
-- Recomendado antes de divulgar oficialmente: mais beta readers além de um amigo, auditoria completa de links/README, e uma seção honesta de "estado atual" no README. **[recomendação dada, ainda não executada]**
+- Recomendado antes de divulgar oficialmente: mais beta readers além de um amigo, auditoria completa de links/README, e uma seção honesta de "estado atual" no README. **[recomendação dada; seção "Estado atual do conteúdo" escrita no README raiz (módulos 1 e 2 completos, Python com Bloco 1 completo e Bloco 2 não escrito); beta readers e auditoria de links ainda pendentes]**
 - Um amigo do autor (sem experiência prévia em SQL) já testou o módulo de SQL de forma informal e relatou ter entendido tudo. **[feedback positivo recebido, informal]**
 
 ## 8. Cheatsheets
@@ -107,4 +111,4 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 - Nome do Bloco 2 do módulo Python (órfão desde que "cozinha industrial" caiu).
 - Domínio dos exemplos do Bloco 2 de Python (genérico vs. engenharia elétrica/industrial real do autor).
 - Produção dos cheatsheets (formato, escopo por módulo) quando SQL e Python estiverem prontos.
-- Execução da auditoria de links/README e da seção de "estado atual" antes da divulgação oficial no LinkedIn.
+- Execução da auditoria de links/README antes da divulgação oficial no LinkedIn (a seção de "estado atual" já foi escrita).
