@@ -4,6 +4,8 @@ Beleza. Você já entende o que é engenharia de dados, sabe diferenciar ela de 
 
 Essa seção existe justamente pra isso. Ela não vai te ensinar SQL, Python ou Airflow de verdade aqui dentro. Ela vai te dizer, em ordem, o que estudar, o porquê de estudar naquela ordem, e pra qual parte do ciclo de vida aquilo serve. Cada tópico abaixo vai virar (ou já é) uma seção própria nesse repositório, com muito mais profundidade.
 
+Vale um aviso: esse roadmap também está em construção, junto com o resto do repositório. A ordem e os itens abaixo podem mudar conforme o projeto cresce.
+
 ## Antes de tudo: um recado sincero pra quem é do Brasil
 
 Isso aqui eu quero deixar bem claro, porque ninguém fala isso em curso nenhum, e devia falar.
@@ -16,21 +18,21 @@ Então, resumindo esse recado: se Excel ainda é um mistério pra você, para aq
 
 ## Agora sim, o roadmap
 
-### 1. SQL e bancos de dados relacionais
+### 1. Fontes de dado (começando por SQL)
 
-Essa é a base de tudo, e não é exagero dizer isso. A imensa maioria do dado que existe em empresa mora, em algum momento, dentro de um banco de dados relacional. SQL é a linguagem universal pra conversar com esse tipo de banco: perguntar "me dê todas as vendas de outubro", "quantos clientes compraram mais de uma vez", esse tipo de coisa.
+Todo dado vem de algum lugar, e conforme esse repositório crescer, essa categoria pode ganhar mais fontes além de banco relacional (Excel, API, arquivo, o que for). Por enquanto, o ponto de partida é o mais comum de todos: banco de dados relacional e SQL. Essa é a base de tudo, e não é exagero dizer isso. A imensa maioria do dado que existe em empresa mora, em algum momento, dentro de um banco de dados relacional. SQL é a linguagem universal pra conversar com esse tipo de banco: perguntar "me dê todas as vendas de outubro", "quantos clientes compraram mais de uma vez", esse tipo de coisa.
 
 Lembrando do ciclo de vida: SQL aparece com força nas etapas de **armazenamento**, **ingestão** e principalmente **transformação**. É a ferramenta que você vai usar pra limpar, organizar e extrair sentido do dado bruto.
 
-*(Módulo dedicado a SQL e bancos relacionais: ainda a ser escrito neste repositório.)*
+*(Módulo dedicado a SQL e bancos relacionais: [2-onde-o-dado-mora/](../2-onde-o-dado-mora/README.md).)*
 
 ### 2. Lógica de programação e Python
 
-Depois de entender SQL, o próximo passo natural é aprender a programar de verdade, e Python é a escolha praticamente unânime em engenharia de dados hoje. Não é a linguagem mais rápida do mundo, não é a mais elegante, mas é a que tem o maior ecossistema de ferramentas de dado construído em cima dela, e isso pesa muito mais do que qualquer outra vantagem técnica de outra linguagem.
+Depois de entender SQL, o próximo passo natural é aprender a programar de verdade. E aí entra o Python, a caixa de ferramentas que você carrega daqui pra frente. Não é a linguagem mais rápida nem a mais elegante, mas é a que tem a ferramenta certa pronta pra quase qualquer etapa do ciclo de dado, e é exatamente essa versatilidade que pesa mais do que qualquer vantagem técnica isolada de outra linguagem.
 
 Python entra forte nas etapas de **ingestão** (escrever o código que busca o dado lá na origem) e **transformação** (fazer cálculo, limpeza e lógica que SQL sozinho não dá conta, ou não dá conta de forma elegante).
 
-*(Módulo dedicado a Python: ainda a ser escrito neste repositório.)*
+*(Módulo dedicado a Python: [3-python/](../3-python/README.md), com o Bloco 1 completo e o Bloco 2 ainda não escrito.)*
 
 ### 3. Git e controle de versão
 
@@ -67,7 +69,7 @@ A boa notícia é que você não precisa aprender todas elas. Depois que você e
 ## Resumindo o roadmap
 
 1. Excel funcional (se você ainda não tem isso, comece por aqui, sério)
-2. SQL e bancos de dados relacionais
+2. Fontes de dado (começando por SQL)
 3. Lógica de programação e Python
 4. Git e controle de versão
 5. Orquestração (Airflow)
