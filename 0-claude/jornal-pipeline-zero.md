@@ -17,6 +17,7 @@ Registro histórico de todas as decisões tomadas sobre o projeto até aqui, org
 ## 2. Estrutura do repositório
 
 - Estrutura atual por módulo numerado: `1-que-porra-e-essa/` (intro + roadmap + ciclo de vida do dado), `2-onde-o-dado-mora/` (SQL, completo), `3-python/` (em andamento). **[decidido]**
+- Capítulo 2 de `1-que-porra-e-essa/` (ciclo de vida) reescrito com a analogia mestra de água e encanamento, por cima do exemplo da loja online: fonte de água na geração, represa (data lake) e reservatório tratado (data warehouse) no armazenamento, captação e bombas na ingestão, "tratar" como o mesmo verbo na transformação, rede de distribuição e torneira na disponibilização, e o ciclo da água no trecho sobre o ciclo não ser linear. Abertura, undercurrents e fechamento sem mudança. **[decidido, escrito]**
 - Cada pasta de conteúdo tem um `README.md` de índice (contexto curto + lista numerada de capítulos). Já aplicado nos módulos 1, 2 e 3. **[decidido, aplicado]**
 - Dentro de `2-onde-o-dado-mora/`, foi testada uma subpasta por assunto/dificuldade e depois **revertida** para numeração linear (flat). **[decidido — versão final é flat]**
 - Reorganização futura maior: reestruturar o repositório inteiro por **estágio do ciclo de vida do dado**, não por ferramenta. Ex: pasta "onde o dado mora" vira o estágio de armazenamento e passa a conter SQL + Excel + APIs; uma pasta separada de "ferramentas transversais" (Python, Claude Code) que podem ser usadas em qualquer estágio; e uma pasta de fundamentos gerais de engenharia de software não específicos de dado (Docker, testes, Git). Um diagrama Mermaid no README raiz mostraria a "trilha" de leitura sugerida separadamente da estrutura categórica de pastas, já que a ordem ideal varia por leitor (alguns pulam Excel, alguns querem começar direto em Airflow). **[adiado até ter bem mais conteúdo]**
@@ -107,7 +108,7 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 - Decisão sobre `datetime` como capítulo próprio ou não.
 - Nome do revisor de storytelling (proposto: Mestre Enredo).
 - Retrofit da analogia reservatório/válvula no módulo de SQL já publicado.
-- Definição de central analogy pra `1-que-porra-e-essa/` (candidata natural: água e encanamento, ver `analogias-narrativas-pipeline-zero.md`) e decisão de quando reescrever o capítulo 2 desse módulo.
+- Aplicar a analogia água/encanamento no capítulo 1 de `1-que-porra-e-essa/` (o capítulo 2 já foi reescrito, ver seção 2).
 - Nome do Bloco 2 do módulo Python (órfão desde que "cozinha industrial" caiu).
 - Domínio dos exemplos do Bloco 2 de Python (genérico vs. engenharia elétrica/industrial real do autor).
 - Produção dos cheatsheets (formato, escopo por módulo) quando SQL e Python estiverem prontos.

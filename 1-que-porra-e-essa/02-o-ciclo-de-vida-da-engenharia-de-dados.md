@@ -18,19 +18,21 @@ Pra esse relatório existir, o dado precisa passar por um caminho. Esse caminho 
 
 ### 1. Geração
 
-Todo dado nasce em algum lugar. Nesse caso, nasce no momento em que o cliente clica em "comprar" no app, ou quando o sistema de estoque registra que um item saiu da prateleira, ou quando alguém clica num anúncio no Instagram.
+Todo dado nasce em algum lugar. Igual água, que sempre vem de alguma fonte: chuva, rio, poço artesiano. Nesse caso, nasce no momento em que o cliente clica em "comprar" no app, ou quando o sistema de estoque registra que um item saiu da prateleira, ou quando alguém clica num anúncio no Instagram.
 
-O engenheiro de dados, na maioria das vezes, **não controla como esse dado nasce**. Ele só recebe o que os sistemas de origem produzem. Mas ele precisa entender bem como cada sistema gera esse dado: com que frequência, em que formato, se o formato pode mudar do nada (e vai mudar, confia), se é um monte de dado de uma vez (lote) ou se vai pingando aos poucos, em tempo real.
+O engenheiro de dados, na maioria das vezes, **não controla como esse dado nasce**. Ele só recebe o que os sistemas de origem produzem. Mas ele precisa entender bem como cada sistema gera esse dado: com que frequência, em que formato, se o formato pode mudar do nada (e vai mudar, confia), se é um monte de dado de uma vez (lote) ou se vai pingando aos poucos, em tempo real. E é aí que a fonte importa: nem toda fonte de água é confiável do mesmo jeito. Poço artesiano costuma entregar sempre a mesma água, rio muda de cor depois de uma chuva forte. Sistema de origem é igual: tem uns que mandam tudo sempre certinho, e tem uns que mudam sem avisar ninguém.
 
 ### 2. Armazenamento
 
-Depois que o dado nasce, ele precisa morar em algum lugar. Parece óbvio, mas essa é uma das decisões mais importantes (e mais difíceis) de toda a engenharia de dados. Onde eu guardo isso? Num banco de dados? Num "data lake" (um depósito gigante de arquivo bruto)? Num "data warehouse" (um armazém já mais organizado, pronto pra consulta)? Guardo tudo pra sempre, ou só por um tempo?
+Depois que o dado nasce, ele precisa morar em algum lugar. Parece óbvio, mas essa é uma das decisões mais importantes (e mais difíceis) de toda a engenharia de dados. Onde eu guardo isso? Num banco de dados? Num data lake? Num data warehouse? Guardo tudo pra sempre, ou só por um tempo?
+
+Pensa na água de novo. Um **data lake** é uma represa: junta um volumão de água bruta, do jeito que chegou, sem tratamento nenhum. Cabe muita coisa e sai barato guardar, mas ninguém bebe direto dali. Um **data warehouse** é o reservatório de água já tratada: limpa, organizada, pronta pro consumo. Dá mais trabalho montar, mas quem precisa pega e usa sem medo.
 
 Essa decisão não é feita uma vez só e esquecida. O dado geralmente passa por armazenamento *várias vezes* ao longo do ciclo, mudando de forma a cada etapa.
 
 ### 3. Ingestão
 
-Ingestão é o processo de **pegar o dado lá na origem e trazer ele pra dentro dos seus sistemas**. É literalmente o cano que liga o sistema de vendas, o sistema de estoque e a ferramenta de marketing num lugar central onde dá pra trabalhar com tudo junto.
+Ingestão é o processo de **pegar o dado lá na origem e trazer ele pra dentro dos seus sistemas**. Na água, essa é a captação: as bombas e os canos que puxam a água lá da fonte e levam até o sistema central. Aqui é a mesma coisa, só que ligando o sistema de vendas, o sistema de estoque e a ferramenta de marketing num lugar central onde dá pra trabalhar com tudo junto.
 
 Essa etapa costuma ser o maior gargalo e a maior dor de cabeça de todo o ciclo, porque sistema de origem cai, muda de formato sem avisar, manda dado duplicado, manda dado incompleto, ou simplesmente não manda nada por um tempo. Boa parte do trabalho real de um engenheiro de dados no dia a dia mora aqui.
 
@@ -38,17 +40,21 @@ Essa etapa costuma ser o maior gargalo e a maior dor de cabeça de todo o ciclo,
 
 Dado bruto raramente é útil do jeito que chega. Ele precisa ser limpo, corrigido, combinado com outros dados, agregado, calculado. É aqui que "quantidade de item vendido" vira "faturamento do dia", que "clique no anúncio" mais "compra realizada" vira "quanto aquela campanha de marketing realmente trouxe de retorno".
 
+E repara no verbo. A gente fala em *tratar* dado do mesmo jeito que fala em *tratar* água. Não é força de expressão minha, é o mesmo verbo mesmo, uma coincidência real do português, e ela encaixa perfeito: água bruta passa pela estação de tratamento antes de chegar na torneira, e dado bruto passa pela transformação antes de chegar no relatório.
+
 Aqui mora um conceito que você provavelmente já ouviu falar, ou vai ouvir bastante: **ETL** e **ELT**. Não precisa se aprofundar agora, só entender a lógica: ETL significa *extrair, transformar, e só depois carregar* o dado no destino final, ou seja, o dado é arrumado *antes* de chegar no armazém. ELT inverte a ordem: *extrair, carregar, e só depois transformar*. O dado bruto vai direto pro armazém, e a arrumação acontece lá dentro, aproveitando o poder de processamento que as ferramentas de nuvem modernas oferecem. Essa mudança de ETL pra ELT foi, em boa parte, consequência direta da nuvem ter ficado barata e poderosa o suficiente pra isso fazer sentido. A gente volta nesse assunto com calma, e com muito mais profundidade, num módulo específico lá na frente.
 
 ### 5. Disponibilização (serving)
 
 De nada adianta todo esse trabalho se o dado não chega em quem precisa dele, do jeito que essa pessoa consegue usar. Essa última etapa é entregar o dado já tratado pro analista montar o relatório, pro cientista de dados treinar o modelo, ou até pra alimentar de volta um sistema (tipo mandar uma lista de clientes com risco de cancelamento direto pra ferramenta que o time de vendas usa).
 
+Na água, essa é a rede de distribuição: os canos que levam a água já tratada até a torneira na casa de alguém. Aqui, a torneira é o relatório do analista, o modelo do cientista de dados, a ferramenta do time de vendas. É onde alguém finalmente abre e usa.
+
 É aqui, nessa etapa, que a empresa finalmente recebe a resposta pra pergunta "quanto eu vendi ontem, e por quê". É por isso que essa etapa existe: **todo o resto do ciclo só tem razão de existir porque, no final, alguém precisa usar esse dado pra alguma coisa**.
 
 ## Uma coisa importante: o ciclo não é uma linha reta
 
-Repara que eu descrevi essas cinco etapas como se fosse 1, 2, 3, 4, 5, bonitinho, em ordem. Na vida real não é bem assim. O dado pode passar por armazenamento várias vezes, voltar, ser transformado de novo, ser servido pra um sistema que gera *outro* dado que entra de novo lá na etapa de geração. É mais um ciclo mesmo, que se repete e se retroalimenta, do que uma esteira de fábrica que só anda pra frente.
+Repara que eu descrevi essas cinco etapas como se fosse 1, 2, 3, 4, 5, bonitinho, em ordem. Na vida real não é bem assim. O dado pode passar por armazenamento várias vezes, voltar, ser transformado de novo, ser servido pra um sistema que gera *outro* dado que entra de novo lá na etapa de geração. É mais um ciclo mesmo, que se repete e se retroalimenta, do que uma esteira de fábrica que só anda pra frente. Parecido com o ciclo da água, na verdade: evapora, vira chuva, escoa, e volta pro começo.
 
 ## E o que são esses tais de "undercurrents"?
 

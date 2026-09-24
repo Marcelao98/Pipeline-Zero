@@ -21,7 +21,7 @@ Conceitos que ganham clareza de graça com essa analogia:
 - **Data warehouse** = reservatório já tratado, estruturado, pronto pro consumo.
 - **Data lakehouse** = tentativa de ter as duas coisas na mesma infraestrutura.
 
-**Status:** decidida nesta conversa. Ainda não escrita em nenhum capítulo. Candidata natural a virar a analogia central do capítulo 2 do módulo `1-que-porra-e-essa/`, que hoje já existe mas foi escrito sem essa camada — ou seja, entraria como reescrita de conteúdo já aprovado, não como capítulo novo. Decisão de quando fazer essa reescrita (agora vs. depois do módulo de Python) ainda em aberto.
+**Status:** escrita no capítulo 2 do módulo `1-que-porra-e-essa/` (ciclo de vida), como camada por cima do exemplo da loja online, que continua sendo o caso concreto. Cada uma das cinco etapas ganhou a imagem correspondente da tabela acima; na etapa de armazenamento, data lake (represa) e data warehouse (reservatório tratado) substituíram a explicação literal anterior. A seção "o ciclo não é uma linha reta" ganhou uma comparação curta com o ciclo da água. Undercurrents ficaram de fora da metáfora, de propósito. Data lakehouse não entrou no texto. Capítulo 1 do mesmo módulo ainda sem a analogia (texto enviado, aplicação pendente).
 
 **Regra de uso:** essa analogia serve para explicar *dado e arquitetura de dado*, não ferramentas específicas. Não deve ser esticada para dentro do módulo de Python (ver seção 3).
 
@@ -64,7 +64,8 @@ Exemplo real do próprio projeto que ilustra isso: o bug de ponto flutuante no c
 
 ## Pendências abertas
 
-- Quando reescrever o capítulo 2 do módulo 1 com a analogia água/encanamento: agora ou só depois do módulo de Python.
+- Aplicar a analogia água/encanamento no capítulo 1 do módulo 1 (o capítulo 2 já foi reescrito).
+- Conferir convivência entre "data warehouse = reservatório tratado" (módulo 1) e "banco relacional = reservatório" (retrofit planejado do módulo de SQL).
 - Se algum resquício de "a cozinha" sobrevive (ex: abertura do README do módulo Python) ou se é descartada de vez.
 - Nome definitivo do Bloco 2 do módulo Python, já que "cozinha industrial" caiu junto com "a cozinha".
 - Se e quando entra conteúdo específico sobre uso de IA no fluxo de trabalho de dado, usando a analogia do estagiário.
