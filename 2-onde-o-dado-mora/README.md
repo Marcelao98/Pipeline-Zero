@@ -2,6 +2,7 @@
 
 Módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados relacional e por que ele existe, e depois entra na sintaxe de SQL na prática.
 
+0. [Fontes de dado](0-fontes-de-dado.md) — capítulo de abertura: as várias fontes de onde o dado vem (banco relacional, NoSQL, streaming, arquivo e planilha, API), e por que o módulo começa pelo banco relacional.
 1. [Bancos de dados relacionais e SQL](01-bancos-de-dados-relacionais-e-sql.md) — o que é um banco de dados relacional, o vocabulário básico (tabela, linha, coluna, chave primária, chave estrangeira) e por que SQL existe.
 2. [Escolhendo e instalando um banco](02-escolhendo-e-instalando-um-banco.md) — diferença entre SQL e SGBD, panorama dos principais SGBDs do mercado, e passo a passo de instalação do PostgreSQL.
 3. [Consultando dado](03-consultando-dado.md) — `SELECT`, `WHERE`, `ORDER BY` e `LIMIT`, pra fazer perguntas simples ao banco e receber resposta.
