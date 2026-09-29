@@ -30,4 +30,4 @@ E o reservatório mais maduro e mais comum que existe hoje pra isso é o banco d
 
 ## Fechando esse capítulo
 
-Não é por acaso que o banco relacional vem primeiro, e ele tá pertinho: é já o [próximo capítulo](01-bancos-de-dados-relacionais-e-sql.md).
+Não é por acaso que o banco relacional vem primeiro, e ele tá pertinho: é já o [próximo capítulo](1-bancos-relacionais/01-bancos-de-dados-relacionais-e-sql.md).

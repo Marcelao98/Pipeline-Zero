@@ -187,7 +187,7 @@ Repara no que aconteceu: `GROUP BY` separou os pedidos por cliente e somou o val
 
 Com `COUNT`, `SUM`, `GROUP BY` e `HAVING`, já dá pra responder pergunta de resumo, tipo "quanto cada cliente gastou" ou "quantos pedidos cada cliente fez". Mas repara que, até aqui, toda consulta trabalhou numa tabela só, a de pedidos. Em nenhum momento a gente trouxe o nome do cliente pra dentro do resultado, só o `id_cliente`, porque o nome mora na outra tabela.
 
-Vale conectar isso com o [ciclo de vida da engenharia de dados](../1-que-porra-e-essa/02-o-ciclo-de-vida-da-engenharia-de-dados.md) que a gente viu lá no primeiro módulo: tudo que fizemos nesse capítulo é a etapa de transformação acontecendo na prática. Dado bruto, linha por linha, virando métrica (total gasto, quantidade de pedido). É exatamente esse tipo de trabalho que mora naquela etapa do ciclo.
+Vale conectar isso com o [ciclo de vida da engenharia de dados](../../1-que-porra-e-essa/02-o-ciclo-de-vida-da-engenharia-de-dados.md) que a gente viu lá no primeiro módulo: tudo que fizemos nesse capítulo é a etapa de transformação acontecendo na prática. Dado bruto, linha por linha, virando métrica (total gasto, quantidade de pedido). É exatamente esse tipo de trabalho que mora naquela etapa do ciclo.
 
 É exatamente esse o assunto do próximo capítulo: `JOIN`, o comando que junta tabela com tabela numa consulta só, aproveitando aquela chave estrangeira que a gente desenhou lá no primeiro capítulo desse módulo.
 
