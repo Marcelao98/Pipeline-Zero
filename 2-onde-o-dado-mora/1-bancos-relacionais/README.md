@@ -12,4 +12,4 @@ A primeira fonte de dado do módulo: o banco de dados relacional, o reservatóri
 8. [CTE](08-cte.md) — `WITH`, um jeito de nomear passo intermediário e ler a consulta de cima pra baixo, em vez de aninhar subquery dentro de subquery.
 9. [Window functions](09-window-functions.md) — `OVER`, `PARTITION BY` e `ORDER BY`, pra calcular métrica em cima de um grupo de linha sem perder a linha individual.
 10. [Transações](10-transacoes.md) — `BEGIN`, `COMMIT` e `ROLLBACK`, pra tratar várias operações de escrita como uma unidade só, tudo ou nada.
-11. [Pra onde ir daqui](11-proximos-passos.md) — fechamento do módulo: recursos pra continuar estudando, e como sair do tutorial e partir pra um projeto próprio.
+11. [Pra onde ir daqui](11-proximos-passos.md) — fechamento de bancos relacionais e SQL: recursos pra continuar estudando, e como sair do tutorial e partir pra um projeto próprio.

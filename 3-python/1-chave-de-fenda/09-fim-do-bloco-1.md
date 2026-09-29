@@ -18,7 +18,7 @@ Ler capítulo é uma fração pequena do aprendizado. Cria projeto próprio, ten
 
 O Pipeline Zero ainda não tem uma lista de exercícios própria. Mas tem muito material gratuito por aí, e alguns pontos de partida bons, com preferência por conteúdo em português:
 
-- **[Curso em Vídeo – Python 3, Gustavo Guanabara](https://www.cursoemvideo.com/curso/python-3-mundo-1/)**: curso completo, gratuito, com certificado, a mesma referência clássica já usada no fechamento do módulo de SQL.
+- **[Curso em Vídeo – Python 3, Gustavo Guanabara](https://www.cursoemvideo.com/curso/python-3-mundo-1/)**: curso completo, gratuito, com certificado, a mesma referência clássica já usada no fechamento de bancos relacionais e SQL.
 - **[Hashtag Programação – curso de Python](https://www.youtube.com/playlist?list=PLpdAy0tYrnKyCZsE-ifaLV1xnkXBE9n7T)**: canal com playlist gratuita voltada pra quem tá começando.
 - **[Asimov Academy – curso gratuito de Python para iniciantes](https://wp.asimov.academy/curso-gratuito-python/)**: escola brasileira focada em Python e dados, com trilha gratuita própria pra quem tá no zero.
 

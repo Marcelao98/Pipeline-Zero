@@ -52,13 +52,13 @@ Os diagramas deste repositório usam [Mermaid](https://mermaid.js.org/), que ren
 ```
 
 - **[1-que-porra-e-essa/](1-que-porra-e-essa/README.md)** é o módulo zero, o ponto de partida. Ele responde: o que é engenharia de dados, como ela se diferencia de análise de dados e ciência de dados, qual o ciclo de vida que todo dado percorre numa empresa, e um roadmap prático de por onde começar a estudar.
-- **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)** é o módulo de banco de dados relacional e SQL. Cobre o que é um banco de dados relacional e por que ele existe, e depois entra na sintaxe de SQL na prática.
+- **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)** é o módulo de fontes de dado. Abre com um panorama de onde o dado vem (banco relacional, NoSQL, streaming, arquivo e planilha, API), e começa pelo banco de dados relacional: o que é, por que existe, e a sintaxe de SQL na prática.
 - **[3-python/](3-python/README.md)** é o módulo de Python. Um resumo enxuto, focado só no que serve pra engenharia de dados: fundamentos da linguagem e Python aplicado a dado. Não é um curso completo de Python.
 
 ### Estado atual do conteúdo
 
 - **[1-que-porra-e-essa/](1-que-porra-e-essa/README.md)**: completo.
-- **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)**: completo.
+- **[2-onde-o-dado-mora/](2-onde-o-dado-mora/README.md)**: abertura (fontes de dado) e bancos relacionais completos.
 - **[3-python/](3-python/README.md)**: Bloco 1 (fundamento da linguagem) completo. Bloco 2 (Python aplicado a dado) ainda não escrito.
 
 ### Próximos módulos planejados

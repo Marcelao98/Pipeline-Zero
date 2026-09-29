@@ -189,6 +189,6 @@ Com `COUNT`, `SUM`, `GROUP BY` e `HAVING`, já dá pra responder pergunta de res
 
 Vale conectar isso com o [ciclo de vida da engenharia de dados](../../1-que-porra-e-essa/02-o-ciclo-de-vida-da-engenharia-de-dados.md) que a gente viu lá no primeiro módulo: tudo que fizemos nesse capítulo é a etapa de transformação acontecendo na prática. Dado bruto, linha por linha, virando métrica (total gasto, quantidade de pedido). É exatamente esse tipo de trabalho que mora naquela etapa do ciclo.
 
-É exatamente esse o assunto do próximo capítulo: `JOIN`, o comando que junta tabela com tabela numa consulta só, aproveitando aquela chave estrangeira que a gente desenhou lá no primeiro capítulo desse módulo.
+É exatamente esse o assunto do próximo capítulo: `JOIN`, o comando que junta tabela com tabela numa consulta só, aproveitando aquela chave estrangeira que a gente desenhou lá no capítulo 1.
 
 E depois de `JOIN`, tem mais uma peça que ainda falta: existe um jeito de calcular o total gasto por cliente sem perder a linha individual de cada pedido, ao contrário do que `GROUP BY` faz. Isso se chama window function, e fica pra mais pra frente.

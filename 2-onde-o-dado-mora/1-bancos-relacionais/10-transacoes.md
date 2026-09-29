@@ -87,4 +87,4 @@ O primeiro `INSERT` (pedido 109) roda sem problema nenhum. Mas o segundo falha, 
 
 ## Fechando esse capítulo
 
-Com transação, fecha o último capítulo técnico desse módulo. Juntando tudo que veio desde o capítulo 1 (o que é banco relacional e SQL, como instalar um banco, consultar, agregar, juntar tabela, criar e modificar dado, subquery, CTE, window function, e agora transação), esse repositório já cobriu uma base sólida o suficiente de SQL pra você sair usando de verdade, num banco de verdade, com confiança de que o dado que você grava não fica pela metade se algo der errado no meio do caminho.
+Com transação, fecha o último capítulo técnico de SQL. Juntando tudo que veio desde o capítulo 1 (o que é banco relacional e SQL, como instalar um banco, consultar, agregar, juntar tabela, criar e modificar dado, subquery, CTE, window function, e agora transação), esse repositório já cobriu uma base sólida o suficiente de SQL pra você sair usando de verdade, num banco de verdade, com confiança de que o dado que você grava não fica pela metade se algo der errado no meio do caminho.
