@@ -6,6 +6,8 @@ Repara no caminho que a gente percorreu até aqui. Os capítulos 3, 4 e 5 foram 
 
 Uma **subquery** é, no fim das contas, uma consulta SQL dentro de outra consulta SQL. Em vez de escrever um valor fixo numa condição (tipo `WHERE valor_total > 100`), você escreve um `SELECT` inteiro naquele lugar, e o banco executa esse `SELECT` de dentro primeiro, pega o resultado dele, e usa esse resultado como se fosse o valor que você tinha digitado na mão.
 
+Se você viu A Origem (Inception), já conhece essa lógica. No filme, o "kick" começa no sonho mais profundo e vai subindo, acordando uma camada de cada vez até chegar na realidade. Subquery funciona igual: você lê de fora pra dentro, mas o banco executa de dentro pra fora, resolvendo primeiro a camada mais funda e entregando o resultado pra camada de cima.
+
 O nome "subquery" vem exatamente disso: é uma query subordinada a outra, que existe pra alimentar a consulta principal com um resultado que, de outro jeito, você não teria como escrever direto.
 
 ## Que problema isso resolve
@@ -49,6 +51,8 @@ Repara que, nos dois casos, a subquery fica entre parênteses, e o banco sempre 
 Subquery dentro de uma subquery é totalmente válido. Nada impede você de colocar uma subquery dentro da outra, várias vezes seguidas, pra resolver uma pergunta que depende de vários passos intermediários.
 
 Só que isso cobra um preço: legibilidade. Cada subquery aninhada empurra a leitura pra mais longe do que a consulta realmente está perguntando, porque você lê de fora pra dentro, mas o banco resolve de dentro pra fora, e seu olho tem que fazer esse malabarismo toda vez. Duas subqueries aninhadas já dá pra acompanhar sem muito esforço. Três, quatro, cinco, e a consulta vira um quebra-cabeça, difícil de ler, difícil de revisar, difícil de corrigir sem quebrar alguma coisa.
+
+É o mesmo risco do filme: empilhar sonho demais faz você perder a noção de em qual camada está, e quanto mais fundo vai, mais fácil é cair no limbo, de onde é difícil voltar. Com subquery aninhada demais acontece a mesma coisa: quem lê se perde no meio dos parênteses e tem dificuldade de voltar até a pergunta que a consulta estava fazendo.
 
 Isso é um problema real o suficiente pra merecer solução própria em SQL, e é exatamente isso que o próximo capítulo, sobre CTE, resolve: um jeito de escrever esses passos intermediários em pedaços nomeados e separados, em vez de empilhar parênteses uns dentro dos outros.
 

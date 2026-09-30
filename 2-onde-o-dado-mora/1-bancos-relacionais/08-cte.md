@@ -8,6 +8,8 @@ Uma **CTE** é um bloco de consulta nomeado e temporário, criado com `WITH`, qu
 
 A diferença central pra subquery não está no que ela calcula, é em como você lê. Subquery força você a ler de fora pra dentro, porque o `SELECT` de dentro fica encaixado dentro do `WHERE` do `SELECT` de fora. CTE inverte isso: você lê de cima pra baixo, um passo de cada vez, cada um já resolvido antes do próximo começar.
 
+Pensa num contato salvo no celular. Em vez de digitar o número inteiro toda vez que você quer ligar pra alguém, você salva com um nome curto, e daí em diante só chama por esse nome. `WITH nome_da_cte AS (...)` é exatamente isso: salva um pedaço de consulta complexo sob um nome, e o resto da consulta chama só pelo nome.[^dns]
+
 ## Que problema isso resolve
 
 O cálculo que a CTE resolve é o mesmo que a subquery já resolvia: uma pergunta que depende de um resultado intermediário, calculado dentro do próprio banco, antes de comparar ou filtrar alguma coisa em cima dele. O que muda é como esse passo intermediário fica organizado na consulta. Em vez de esconder ele dentro de parênteses aninhados, a CTE dá um nome pra ele, e deixa ele declarado antes da consulta principal começar, sem obrigar quem lê a montar o quebra-cabeça de fora pra dentro que a gente viu no capítulo passado.
@@ -46,7 +48,7 @@ Isso é o que permite quebrar um problema com vários passos intermediários num
 
 Vale desfazer uma expectativa antes que ela se forme: CTE não roda mais rápido que a subquery equivalente, na maioria dos bancos. O trabalho que o banco precisa fazer pra calcular aquele resultado intermediário é basicamente o mesmo, dando nome a ele ou não. Alguns bancos, inclusive, calculam e guardam o resultado da CTE temporariamente antes de seguir pro resto da consulta, o que ocasionalmente pode deixar ela mais lenta que a subquery equivalente, nunca mais rápida por padrão.
 
-O ganho real de CTE é outro: legibilidade, tanto pra você quanto pra quem for revisar ou dar manutenção nessa consulta depois. Não é sobre fazer o banco trabalhar menos, é sobre fazer a pessoa lendo o código entender mais rápido o que está acontecendo.
+O ganho real de CTE é outro: legibilidade, tanto pra você quanto pra quem for revisar ou dar manutenção nessa consulta depois. Não é sobre fazer o banco trabalhar menos, é sobre fazer a pessoa lendo o código entender mais rápido o que está acontecendo. É como o contato salvo no celular: salvar o contato não faz a ligação completar mais rápido, só evita você ter que redigitar o número toda vez. Com CTE, o que você evita é reescrever (e reler) o mesmo pedaço de consulta escondido entre parênteses.
 
 Vale também registrar que existe CTE recursiva, um tipo especial que consegue referenciar a si mesma, útil pra percorrer estrutura hierárquica (tipo uma árvore de categoria com subcategoria dentro de subcategoria). Isso foge do escopo desse capítulo, mas fica registrado que existe.
 
@@ -110,3 +112,5 @@ Mesmo resultado dos dois exemplos do capítulo passado, mas repara como a leitur
 Com CTE, a gente ganha um jeito de organizar cálculo intermediário em passo nomeado e legível, sem abrir mão do que subquery já resolvia. O ganho é de leitura, não de velocidade, e isso já vale a troca na maioria das consultas que crescem além de uma ou duas linhas.
 
 Ainda sobra um tipo de pergunta que nem subquery nem CTE, do jeito que a gente viu até aqui, resolvem direito: calcular uma métrica (tipo total acumulado, ou posição num ranking) sem perder a linha individual de cada registro, ao contrário do que `GROUP BY` faz. Isso já foi deixado como gancho lá no capítulo de agregação, e chegou a hora de resolver: window functions, assunto do próximo capítulo.
+
+[^dns]: É a mesma lógica por trás do DNS, que troca um número difícil de decorar (o endereço IP de um site) por um nome fácil de lembrar.
