@@ -1,10 +1,12 @@
 # SQL na prática: juntando tabelas
 
-No capítulo anterior a gente aprendeu a resumir dado com `COUNT`, `SUM`, `GROUP BY` e `HAVING`. Só que toda consulta que fizemos até agora rodou dentro de uma tabela só, a de pedidos. Isso é uma limitação real: pergunta de negócio de verdade quase sempre precisa de dado que está espalhado em mais de uma tabela. O nome do cliente mora na tabela de clientes. Qual produto ele comprou mora em outro lugar. Se eu quero uma resposta que junte as duas coisas, preciso de um jeito de cruzar tabela com tabela dentro da própria consulta. É isso que esse capítulo resolve.
+Se no capítulo passado a união transformava várias linhas numa métrica só, aqui a união é de outro tipo: não é linha com linha, é tabela inteira com tabela inteira. Até agora toda consulta rodou dentro de uma tabela só, a de pedidos. Só que pergunta de negócio de verdade quase sempre precisa de dado espalhado: o nome do cliente mora na tabela de clientes, o produto que ele comprou mora em outro lugar. Pra juntar as duas coisas numa resposta só, preciso cruzar tabela com tabela dentro da própria consulta. É isso que esse capítulo resolve.
 
 ## O que é JOIN, antes de qualquer sintaxe
 
 `JOIN` é o comando que junta linha de uma tabela com linha de outra tabela, baseado numa relação que já existe entre elas: a mesma chave primária e chave estrangeira que a gente viu lá no capítulo 1. Se a tabela de pedidos tem uma coluna `id_cliente` que aponta pra chave primária da tabela de clientes, `JOIN` é o comando que usa esse apontamento pra trazer, numa consulta só, dado das duas tabelas ao mesmo tempo.
+
+Lembra do cano que liga o reservatório de pedidos ao reservatório de clientes, lá do capítulo 1? Até agora ele tava instalado, mas ninguém tinha aberto. `JOIN` é abrir esse cano: em vez de encher o copo num reservatório, andar até o outro e encher de novo, a água dos dois chega de uma vez só, na mesma torneira.
 
 Sem `JOIN`, a alternativa seria fazer isso na mão: rodar uma consulta na tabela de pedidos, pegar o `id_cliente` de cada linha, e ir atrás desse `id_cliente` na tabela de clientes, um por um. Funciona pra três linhas. Não funciona pra três milhões. `JOIN` existe justamente pra tirar esse trabalho manual das suas costas e deixar o banco fazer esse cruzamento de forma eficiente.
 
@@ -189,6 +191,114 @@ FULL JOIN pedidos ON clientes.id_cliente = pedidos.id_cliente;
 ```
 
 Com os dados que a gente tem, esse resultado ficaria parecido com o do `LEFT JOIN` de mais cedo (a Elisa aparecendo com `NULL`), porque nossa tabela de pedidos não tem nenhuma linha órfã, sem cliente correspondente. Mas se existisse, `FULL JOIN` traria ela também, com `NULL` do lado do cliente. Ele é o tipo mais completo: nada se perde de nenhum dos dois lados.
+
+## CROSS JOIN, como multiplicação
+
+Os quatro tipos que a gente viu até aqui têm uma coisa em comum: todos casam linha com linha usando uma relação, aquela condição do `ON`. O `CROSS JOIN` é um bicho diferente. Ele não tem `ON`, porque não casa relação nenhuma. Ele multiplica: pega toda linha de uma tabela e combina com toda linha da outra. Se uma tabela tem N linhas e a outra tem M, o resultado tem N × M linhas, sem exceção.
+
+Dito assim parece meio inútil. Por que alguém ia querer misturar tudo com tudo? A primeira vez que isso fez sentido pra mim foi olhando quebra de equipamento, então vou sair da loja um instante e usar esse exemplo.
+
+Imagina um dashboard que mostra, mês a mês, quantas vezes cada equipamento quebrou. Três tabelas entram nessa história. Uma de equipamentos:
+
+| id_equipamento | nome_equipamento |
+|---|---|
+| 1 | Compressor |
+| 2 | Bomba d'água |
+| 3 | Esteira |
+
+Uma de meses (a dimensão de tempo, que é só uma lista dos meses que o dashboard cobre):
+
+| mes |
+|---|
+| 2026-07 |
+| 2026-08 |
+| 2026-09 |
+
+E uma de quebras, onde cada linha é uma quebra que aconteceu de verdade:
+
+| id_quebra | id_equipamento | mes |
+|---|---|---|
+| 1 | 1 | 2026-07 |
+| 2 | 1 | 2026-09 |
+| 3 | 3 | 2026-08 |
+
+Repara que a Bomba d'água nunca quebrou, mesma ideia da Elisa e do Teclado Mecânico lá em cima.
+
+O jeito mais óbvio de montar esse indicador seria agrupar a tabela de quebras por equipamento e mês, com o `GROUP BY` do capítulo passado:
+
+```sql
+SELECT id_equipamento, mes, COUNT(*) AS qtd_quebras
+FROM quebras
+GROUP BY id_equipamento, mes;
+```
+
+Resultado:
+
+| id_equipamento | mes | qtd_quebras |
+|---|---|---|
+| 1 | 2026-07 | 1 |
+| 1 | 2026-09 | 1 |
+| 3 | 2026-08 | 1 |
+
+Três linhas. E aí mora o problema: só aparece combinação que teve quebra. O Compressor em agosto não aparece. A Bomba d'água não aparece em mês nenhum. Quando isso vai pro gráfico, em vez de uma barra no zero dizendo "esse mês não quebrou", fica um buraco, e buraco no gráfico ninguém sabe se é "não quebrou" ou "o dado não chegou".
+
+Pra ter o zero, primeiro eu preciso de todas as combinações possíveis, todo equipamento em todo mês, tenha quebrado ou não. É exatamente isso que o `CROSS JOIN` entrega:
+
+```sql
+SELECT equipamentos.nome_equipamento, meses.mes
+FROM equipamentos
+CROSS JOIN meses;
+```
+
+Resultado:
+
+| nome_equipamento | mes |
+|---|---|
+| Compressor | 2026-07 |
+| Compressor | 2026-08 |
+| Compressor | 2026-09 |
+| Bomba d'água | 2026-07 |
+| Bomba d'água | 2026-08 |
+| Bomba d'água | 2026-09 |
+| Esteira | 2026-07 |
+| Esteira | 2026-08 |
+| Esteira | 2026-09 |
+
+Três equipamentos vezes três meses, nove linhas. Multiplicação pura, sem `ON` nenhum.
+
+Agora falta o valor de verdade. Pra isso entra um velho conhecido, o `LEFT JOIN`: a grade de equipamento × mês fica na esquerda, garantida inteira, e a tabela de quebras vem da direita preenchendo onde existir quebra.
+
+```sql
+SELECT equipamentos.nome_equipamento, meses.mes, COUNT(quebras.id_quebra) AS qtd_quebras
+FROM equipamentos
+CROSS JOIN meses
+LEFT JOIN quebras ON quebras.id_equipamento = equipamentos.id_equipamento
+                 AND quebras.mes = meses.mes
+GROUP BY equipamentos.id_equipamento, equipamentos.nome_equipamento, meses.mes
+ORDER BY equipamentos.id_equipamento, meses.mes;
+```
+
+Resultado:
+
+| nome_equipamento | mes | qtd_quebras |
+|---|---|---|
+| Compressor | 2026-07 | 1 |
+| Compressor | 2026-08 | 0 |
+| Compressor | 2026-09 | 1 |
+| Bomba d'água | 2026-07 | 0 |
+| Bomba d'água | 2026-08 | 0 |
+| Bomba d'água | 2026-09 | 0 |
+| Esteira | 2026-07 | 0 |
+| Esteira | 2026-08 | 1 |
+| Esteira | 2026-09 | 0 |
+
+Nove linhas, nenhum buraco. Duas coisas pra reparar aqui.
+
+Primeiro, o `ON` desse `LEFT JOIN` tem duas condições ligadas por `AND`. Faz sentido: uma quebra só pertence a uma linha da grade se bater o equipamento **e** o mês ao mesmo tempo. Se eu casasse só pelo equipamento, a quebra de julho do Compressor ia aparecer também em agosto e setembro.
+
+Segundo, de onde vem o zero. Onde não teve quebra, o `LEFT JOIN` deixa `quebras.id_quebra` como `NULL`. E lembra do capítulo passado, que `COUNT(coluna)` ignora linha onde aquela coluna está vazia? É isso que acontece aqui: não tem nada pra contar, e o `COUNT` devolve zero. Foi por isso que usei `COUNT(quebras.id_quebra)` e não `COUNT(*)`: o `COUNT(*)` contaria a linha da grade mesmo sem quebra, e todo mundo ia aparecer com pelo menos 1.
+
+Resumindo o raciocínio: `CROSS JOIN` monta o esqueleto com tudo que *deveria* existir, e o `LEFT JOIN` preenche com o que *de fato* aconteceu. Um cuidado, só: como ele multiplica, `CROSS JOIN` entre duas tabelas grandes explode rápido. Mil linhas vezes mil linhas já dá um milhão. Ele funciona bem quando pelo menos um dos lados é pequeno e controlado, tipo uma lista de meses.
 
 ## Juntando tudo num exemplo só
 

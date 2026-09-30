@@ -1,6 +1,12 @@
 # SQL na prática: agregando e agrupando dado
 
-No capítulo anterior a gente aprendeu a trazer dado do banco e filtrar linha por linha: `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`. Isso resolve um bocado de pergunta, mas não resolve tudo. Repara que em nenhum momento a gente somou o valor de um pedido, contou quantos pedidos um cliente fez, ou resumiu várias linhas numa métrica só. É exatamente esse buraco que esse capítulo preenche: agregação e agrupamento de dado.
+Eu sempre acreditei naquela frase batida, "a união faz a força". Gente separada, cada um no seu canto, rende pouco. Ideia solta, anotada num papel qualquer e esquecida na gaveta, também. Mas quando você junta essas peças, o resultado costuma ser mais forte e mais completo do que qualquer uma delas sozinha.
+
+Não vou ficar filosofando em cima disso, é só a porta de entrada. Porque em SQL essa ideia aparece de um jeito bem concreto. Uma linha de pedido sozinha diz pouca coisa: alguém comprou algo, num dia, por um valor. Agora pega essa linha, soma, conta e agrupa com as outras, e aparece um panorama que nenhuma linha isolada mostraria: quanto cada cliente gastou, quantos pedidos cada um fez, quem compra mais.
+
+Voltando pro nosso reservatório: até aqui, a gente só abriu a válvula e regulou o que passava. Agora a ideia é outra. Imagina pegar essa água e separar em baldes, um balde por categoria (um balde pra cada cliente, por exemplo). É isso que o `GROUP BY` faz. E depois que cada balde tá cheio, `COUNT` e `SUM` são a leitura de quanto tem dentro de cada um.
+
+No capítulo anterior a gente aprendeu a trazer dado do banco e filtrar linha por linha: `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`. Em nenhum momento a gente somou, contou ou resumiu várias linhas numa métrica só. É exatamente esse buraco que esse capítulo preenche: agregação e agrupamento de dado.
 
 ## Relembrando os dados que a gente vem usando
 

@@ -1,6 +1,6 @@
 # Onde o dado mora: bancos de dados relacionais e SQL
 
-Nos módulos anteriores a gente entendeu o que é engenharia de dados e o ciclo de vida que todo dado percorre (geração, armazenamento, ingestão, transformação, disponibilização). Agora chegou a hora de encostar de verdade na etapa de armazenamento, e começar pelo lugar onde a imensa maioria do dado de empresa mora até hoje: o banco de dados relacional.
+Nos módulos anteriores a gente entendeu o que é engenharia de dados e o ciclo de vida que todo dado percorre (geração, armazenamento, ingestão, transformação, disponibilização). E no capítulo anterior a gente viu que dado vem de um monte de fonte diferente, mas que toda fonte, cedo ou tarde, precisa de um lugar pra descansar e virar algo consultável. Chegou a hora de conhecer esse lugar de perto: o reservatório mais maduro e mais comum que existe, onde a imensa maioria do dado de empresa mora até hoje. O banco de dados relacional.
 
 ## Antes de existir banco de dados, como é que isso funcionava?
 
@@ -10,9 +10,9 @@ Nenhum desses arquivos soltos resolvia isso de forma confiável. Cada aplicaçã
 
 ## Então, o que é um banco de dados relacional?
 
-Um banco de dados relacional é, no fim das contas, um jeito de organizar dado em tabelas, e conectar essas tabelas entre si através de relações. Daí o nome "relacional": o valor não está apenas em cada tabela isolada, está em como as tabelas se relacionam umas com as outras.
+Um banco de dados relacional é, no fim das contas, aquele reservatório tratado do capítulo anterior: um jeito de organizar dado em tabelas, e conectar essas tabelas entre si através de relações. Daí o nome "relacional": o valor não está apenas em cada tabela isolada, está em como as tabelas se relacionam umas com as outras.
 
-Em vez de guardar tudo bagunçado num arquivo só, você separa o dado por assunto. Uma tabela de clientes. Uma tabela de produtos. Uma tabela de pedidos. E aí, em vez de repetir a informação inteira do cliente dentro de cada pedido, você só referencia qual cliente fez aquele pedido. Isso evita repetição de dado, evita inconsistência, e deixa muito mais fácil garantir que o dado ali dentro faça sentido.
+Em vez de guardar tudo bagunçado num arquivo só, você separa o dado por assunto. Uma tabela de clientes. Uma tabela de produtos. Uma tabela de pedidos. E aí, em vez de repetir a informação inteira do cliente dentro de cada pedido, você só referencia qual cliente fez aquele pedido. Isso evita repetição de dado, evita inconsistência, e deixa muito mais fácil garantir que o dado ali dentro faça sentido. É água que já chega estruturada, organizada e tratada, não um balde de qualquer coisa.
 
 Além disso, banco de dados relacional já nasce resolvendo, de fábrica, um monte de problema que arquivo solto não resolvia: controle de quem pode acessar o quê, garantia de que uma operação não fica pela metade se algo der errado no meio do caminho, e um jeito padronizado de buscar exatamente o dado que você precisa, sem ter que vasculhar arquivo por arquivo.
 
@@ -42,7 +42,23 @@ Lembra que eu falei que o valor do banco relacional está em como as tabelas se 
 
 Imagina a tabela de pedidos. Cada pedido foi feito por um cliente. Em vez de copiar todos os dados daquele cliente (nome, e-mail, telefone) dentro de cada linha da tabela de pedidos, o que seria um desperdício enorme e um convite pra inconsistência, a tabela de pedidos só guarda uma coluna com o ID daquele cliente, o mesmo ID que é a chave primária lá na tabela de clientes.
 
-Essa coluna, que aponta pra chave primária de outra tabela, é a chave estrangeira. É o cano que liga pedido a cliente, sem precisar duplicar informação. Se o cliente mudar de telefone, você atualiza um lugar só, a tabela de clientes, e todo pedido antigo dele continua automaticamente "apontando" pro cliente certo, com o telefone atualizado.
+Pra ficar concreto, pensa na Ana Souza, uma cliente que fez três pedidos (o 101, o 103 e o 105). Sem chave estrangeira, cada uma dessas três linhas de pedido carregaria junto "Ana Souza, ana@email.com", a mesma informação copiada três vezes. Com chave estrangeira, as três linhas guardam só o número 1 na coluna `id_cliente`, e o nome e o e-mail da Ana moram num lugar só: na tabela de clientes.
+
+Essa coluna, que aponta pra chave primária de outra tabela, é a chave estrangeira. É o cano que liga o reservatório de pedidos ao reservatório de clientes, sem precisar duplicar água nenhuma no caminho. Se o cliente mudar de telefone, você atualiza um lugar só, a tabela de clientes, e todo pedido antigo dele continua automaticamente "apontando" pro cliente certo, com o telefone atualizado.
+
+E tem mais um trabalho que a chave estrangeira faz, meio escondido: ela impede pedido órfão. Se alguém tentar gravar um pedido com `id_cliente` igual a 99, e não existe cliente 99 na tabela de clientes, o banco recusa. Não dá pra ter pedido apontando pra cliente que não existe. O cano não pode ser ligado num reservatório fantasma.
+
+Juntando tudo, as três tabelas que vão acompanhar a gente nos próximos capítulos ficam assim:
+
+```mermaid
+flowchart LR
+    pedidos["<b>pedidos</b><br/>id_pedido (PK)<br/>id_cliente (FK)<br/>data_pedido<br/>valor_total"]
+    clientes["<b>clientes</b><br/>id_cliente (PK)<br/>nome<br/>email<br/>estado"]
+    produtos["<b>produtos</b><br/>id_produto (PK)<br/>nome_produto<br/>categoria<br/>preco"]
+    pedidos -- "id_cliente aponta pra" --> clientes
+```
+
+Cada caixa é uma tabela, com as colunas dentro. PK marca a chave primária, FK marca a chave estrangeira, e a seta é o cano: a coluna `id_cliente` de pedidos aponta pra chave primária de clientes. Produtos fica sozinho por enquanto.
 
 ## Trade-offs: banco relacional resolve tudo?
 
@@ -52,7 +68,7 @@ Só que existem cenários onde ele não é a melhor escolha: volume gigantesco d
 
 ## E como eu falo com esse banco? (SQL entra em cena)
 
-Beleza, você já tem um banco de dados relacional guardando seu dado organizado em tabelas. Só que surge uma pergunta prática: como eu, ser humano, pergunto pra esse banco alguma coisa? Como eu peço "me mostra todos os clientes que compraram mais de uma vez"?
+Beleza, o reservatório tá montado: dado organizado em tabela, cada linha com sua chave, tabela ligada com tabela. Só que surge uma pergunta prática: como eu, ser humano, pergunto pra esse banco alguma coisa? Como eu peço "me mostra todos os clientes que compraram mais de uma vez"?
 
 É exatamente esse buraco que o **SQL** (Structured Query Language, ou "linguagem de consulta estruturada") veio preencher. SQL é a linguagem criada especificamente pra conversar com banco de dados relacional: pedir dado, inserir dado novo, atualizar dado existente, apagar o que não serve mais, e definir a própria estrutura das tabelas.
 
@@ -78,6 +94,6 @@ Fazer isso na mão, abrindo arquivo e contando linha por linha, seria uma tortur
 
 ## Fechando esse capítulo
 
-Então é isso: banco de dados relacional é onde o dado mora, organizado em tabela, linha e coluna, conectado por chave primária e chave estrangeira. E SQL é a linguagem que existe pra você conversar com esse banco, descrevendo o que você quer sem precisar ensinar o banco a fazer o trabalho pesado.
+Então é isso: banco de dados relacional é o reservatório onde o dado mora, organizado em tabela, linha e coluna, conectado por chave primária e chave estrangeira. E SQL é a linguagem que existe pra você conversar com esse banco, descrevendo o que você quer sem precisar ensinar o banco a fazer o trabalho pesado.
 
-No próximo capítulo a gente vai falar sobre instalação: qual programa efetivamente executa o SQL, quais são as principais opções do mercado, e como deixar um banco rodando na sua própria máquina.
+Só que reservatório sem válvula não adianta de nada. A água tá lá, organizadinha, e você não consegue tirar nem um copo. É isso que o SQL resolve. Mas antes de abrir a primeira válvula, o reservatório precisa existir na sua máquina, e é por aí que o próximo capítulo começa: qual programa efetivamente executa o SQL, quais são as principais opções do mercado, e como deixar um banco rodando no seu computador.

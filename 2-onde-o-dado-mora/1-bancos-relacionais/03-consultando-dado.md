@@ -1,6 +1,6 @@
 # SQL na prática: consultando dado
 
-No capítulo anterior a gente entendeu o que é banco de dados relacional e o que é SQL, sem escrever nenhuma linha de código. Chegou a hora de sujar a mão de verdade.
+Nos capítulos anteriores a gente entendeu o que é banco de dados relacional e o que é SQL, e deixou o PostgreSQL instalado e rodando na sua máquina. Até aqui, o único SQL que rodou foi um `SELECT version();` pra confirmar que o banco estava de pé. Chegou a hora de sujar a mão de verdade.
 
 Esse capítulo cobre só uma parte do SQL: **consultar** dado que já existe. Nada de somar, contar, juntar tabela ou criar/alterar nada ainda, isso fica pros próximos capítulos. Aqui o objetivo é aprender a fazer perguntas simples pro banco e receber resposta.
 
@@ -49,7 +49,7 @@ Vamos usar esses dados de exemplo em cada comando daqui pra frente.
 
 ## SELECT: pedindo dado ao banco
 
-O primeiro problema que você tem é o mais básico possível: como eu peço pro banco me mostrar algum dado? É pra isso que existe o `SELECT`. Ele resolve exatamente essa necessidade: escolher quais colunas de uma tabela você quer ver.
+O primeiro problema que você tem é o mais básico possível: como eu peço pro banco me mostrar algum dado? É pra isso que existe o `SELECT`. Ele é a torneira: você abre e pede a água que quer ver. Na prática, ele resolve exatamente essa necessidade: escolher quais colunas de uma tabela você quer ver.
 
 A sintaxe básica é:
 
@@ -80,11 +80,15 @@ SELECT *
 FROM clientes;
 ```
 
-Isso traria a tabela de clientes inteira, com todas as quatro colunas.
+Isso traria a tabela de clientes inteira, com todas as quatro colunas. Com três clientes, tranquilo. Mas antes de seguir, uma historinha.
+
+Imagina alguém abrindo o registro da caixa d'água até o talo, num cano que foi feito pra aguentar pouca pressão. A água sai com tudo, a conexão estoura, a pia transborda, molha o que não era pra molhar, e no meio da lambança ninguém consegue nem enxergar o que está acontecendo. A água não tinha nada de errado. O problema foi o volume, sem controle nenhum, chegando num lugar que não estava preparado pra receber.
+
+Com banco é igualzinho. Rodar um `SELECT *` sem filtro nenhum numa tabela de milhões de linhas é abrir a válvula até o talo: o banco trabalha à toa, a rede engasga, a sua tela trava tentando mostrar tudo, e no final você não consegue ler nada daquilo. Guarda essa imagem, porque os próximos comandos são justamente jeitos de controlar a torneira.
 
 ## WHERE: filtrando só o que interessa
 
-Só que só pedir coluna não resolve tudo. Na maioria das vezes você não quer a tabela inteira, você quer só algumas linhas específicas. Trazer milhão de linha quando você só precisa de dez é desperdício de processamento e de tempo. É esse problema que o `WHERE` resolve: ele filtra, trazendo só as linhas que atendem a uma condição.
+Só que só pedir coluna não resolve tudo. Na maioria das vezes você não quer a tabela inteira, você quer só algumas linhas específicas. Trazer milhão de linha quando você só precisa de dez é desperdício de processamento e de tempo, é aquela válvula aberta até o talo de novo. É esse problema que o `WHERE` resolve: ele é a válvula que regula o que passa, filtrando e trazendo só as linhas que atendem a uma condição.
 
 Sintaxe:
 
@@ -159,7 +163,7 @@ Resultado:
 
 ## LIMIT: trazendo só uma quantidade de linha
 
-Último comando desse capítulo. Às vezes você não quer o resultado inteiro, quer só uma amostra, ou só os primeiros resultados depois de ordenar. Pensa numa tabela de pedidos com um milhão de linhas: sem limitar, o banco te devolveria o milhão de linhas de uma vez, o que na prática ninguém consegue nem ler. É isso que o `LIMIT` resolve: ele corta o resultado numa quantidade específica de linhas.
+Último comando desse capítulo. Às vezes você não quer o resultado inteiro, quer só uma amostra, ou só os primeiros resultados depois de ordenar. Pensa numa tabela de pedidos com um milhão de linhas: sem limitar, o banco te devolveria o milhão de linhas de uma vez, o que na prática ninguém consegue nem ler. Você queria um copo d'água e abriu a torneira pra encher a banheira inteira. É isso que o `LIMIT` resolve: ele corta o resultado numa quantidade específica de linhas.
 
 Sintaxe:
 
