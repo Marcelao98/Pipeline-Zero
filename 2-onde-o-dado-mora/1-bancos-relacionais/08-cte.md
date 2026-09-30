@@ -69,7 +69,7 @@ CROSS JOIN media_pedidos
 WHERE pedidos.valor_total > media_pedidos.media;
 ```
 
-A CTE `media_pedidos` calcula a média de todos os pedidos primeiro, `160.82` (aproximando as casas decimais), e dá o nome `media` pra essa coluna. Repara num tipo de `JOIN` que não apareceu no capítulo sobre junção de tabela: `CROSS JOIN` combina toda linha de uma tabela com toda linha da outra (o chamado produto cartesiano), sem nenhuma condição de correspondência envolvida. Aqui ele funciona bem porque `media_pedidos` tem só uma linha, então o resultado do `CROSS JOIN` é simplesmente uma cópia de cada linha de `pedidos`, com a média grudada do lado. Repara que não sobrou nenhum parêntese dentro do `WHERE`: a comparação virou `pedidos.valor_total > media_pedidos.media`, direta, sem aninhamento.
+A CTE `media_pedidos` calcula a média de todos os pedidos primeiro, `160.82` (aproximando as casas decimais), e dá o nome `media` pra essa coluna. Repara no `CROSS JOIN`, aquele que a gente conheceu no capítulo sobre junção de tabela: ele combina toda linha de uma tabela com toda linha da outra (o chamado produto cartesiano), sem nenhuma condição de correspondência envolvida. Aqui ele funciona bem porque `media_pedidos` tem só uma linha, então o resultado do `CROSS JOIN` é simplesmente uma cópia de cada linha de `pedidos`, com a média grudada do lado. Repara que não sobrou nenhum parêntese dentro do `WHERE`: a comparação virou `pedidos.valor_total > media_pedidos.media`, direta, sem aninhamento.
 
 Resultado, idêntico ao do capítulo anterior:
 

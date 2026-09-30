@@ -31,7 +31,8 @@ Estrutura final (subpasta `1-bancos-relacionais/`, numeração 01–11): 1) banc
 
 - Novo capítulo de abertura do módulo: `0-fontes-de-dado.md`, fora da numeração corrida 1–11 (nada foi renumerado), mesmo espírito do `01-por-que-python.md`. Usa a analogia de fontes de água (chuva, rio, poço, represa, mar) pra apresentar as fontes de dado: banco relacional (reservatório tratado), NoSQL (represa/mar bruto), streaming (rio correndo), arquivo/planilha (poço ou balde), API (torneira de outra casa). Fecha dizendo que toda fonte precisa de um reservatório consultável, e o mais comum é o banco relacional, gancho pro capítulo 1. Sem SQL e sem comparação entre tipos de banco. Esboço aprovado pelo Marcelo em 28/09/2026. **[decidido, escrito]**
 - Dataset recorrente usado em todos os exemplos: `clientes` (5 linhas), `pedidos` (6 linhas, ids 101-106), `produtos` (4 linhas, incluindo um produto nunca pedido de propósito). **[decidido]**
-- Analogia central do módulo: **reservatório e válvula** (banco relacional = reservatório local; SQL = as válvulas — SELECT abre, WHERE filtra o fluxo, JOIN conecta canos de reservatórios diferentes, GROUP BY agrupa em baldes por categoria). Detalhes em `analogias-narrativas-pipeline-zero.md`. **[decidido, ainda não aplicado ao texto já publicado — retrofit adiado até o módulo de Python terminar]**
+- Analogia central do módulo: **reservatório e válvula** (banco relacional = reservatório local; SQL = as válvulas — SELECT abre, WHERE filtra o fluxo, JOIN conecta canos de reservatórios diferentes, GROUP BY agrupa em baldes por categoria). Detalhes em `analogias-narrativas-pipeline-zero.md`. **[decidido, aplicado]**
+- Retrofit de analogias no módulo de SQL já publicado, feito capítulo por capítulo em 29-30/09/2026 (esboço aprovado pelo Marcelo em cada um): capítulos 1 a 5 com reservatório e válvula (reservatório, cano da chave estrangeira com o exemplo da Ana Souza e diagrama Mermaid das três tabelas, torneira/válvula no SELECT/WHERE/LIMIT, baldes no GROUP BY com o gancho "a união faz a força", JOIN como abrir o cano, e seção nova de CROSS JOIN com exemplo de quebra de equipamento); capítulo 6 com formulário e editor de texto (formulário no CREATE TABLE, "localizar e substituir" no UPDATE sem WHERE, Ctrl+A + Delete + salvar no DELETE sem WHERE, mesma imagem no fechamento de boas práticas, e uma frase ligando o "não tem desfazer" à transação do capítulo 10); capítulo 7 com Inception (o "kick" de dentro pra fora, e o limbo pra aninhamento demais); capítulo 8 com contato salvo no celular (nota de rodapé citando DNS); capítulo 9 com gancho de abertura citando "Paisagem da Janela" (Lô Borges e Fernando Brant, Clube da Esquina). Matrioska fica reservada pra CTE recursiva. Capítulos 10 e 11 sem retrofit. **[decidido, escrito]**
 - Fechamento do módulo inclui lista curada de recursos gratuitos em português (+ 2 exceções em inglês sinalizadas: canal Data With Baraa e curso de SQL do freeCodeCamp, este último deixado por último e com aviso de estar em inglês). **[decidido, escrito]**
 
 ## 4. Módulo Python (`3-python/`) — em andamento
@@ -84,7 +85,7 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 ## 7. Prontidão para divulgação (LinkedIn)
 
 - Recomendação dada: SQL e Python completos já são barra suficiente pra divulgar oficialmente — não é necessário esperar Git, Airflow ou Nuvem. **[recomendação dada, aguardando SQL+Python completos]**
-- Recomendado antes de divulgar oficialmente: mais beta readers além de um amigo, auditoria completa de links/README, e uma seção honesta de "estado atual" no README. **[recomendação dada; seção "Estado atual do conteúdo" escrita no README raiz (módulos 1 e 2 completos, Python com Bloco 1 completo e Bloco 2 não escrito); beta readers e auditoria de links ainda pendentes]**
+- Recomendado antes de divulgar oficialmente: mais beta readers além de um amigo, auditoria completa de links/README, e uma seção honesta de "estado atual" no README. **[recomendação dada; seção "Estado atual do conteúdo" escrita no README raiz (módulos 1 e 2 completos, Python com Bloco 1 completo e Bloco 2 não escrito); auditoria de links feita em 30/09/2026 (todo link interno aponta pra arquivo existente, todo link externo respondendo, vídeos do YouTube conferidos); beta readers ainda pendentes]**
 - Um amigo do autor (sem experiência prévia em SQL) já testou o módulo de SQL de forma informal e relatou ter entendido tudo. **[feedback positivo recebido, informal]**
 
 ## 8. Cheatsheets
@@ -110,9 +111,8 @@ Escopo evoluiu em três rodadas de correção do autor: de "lógica de programa�
 - Criação do capítulo "Instalando Python".
 - Decisão sobre `datetime` como capítulo próprio ou não.
 - Nome do revisor de storytelling (proposto: Mestre Enredo).
-- Retrofit da analogia reservatório/válvula no módulo de SQL já publicado.
 - Aplicar a analogia água/encanamento no capítulo 1 de `1-que-porra-e-essa/` (o capítulo 2 já foi reescrito, ver seção 2).
 - Nome do Bloco 2 do módulo Python (órfão desde que "cozinha industrial" caiu).
 - Domínio dos exemplos do Bloco 2 de Python (genérico vs. engenharia elétrica/industrial real do autor).
 - Produção dos cheatsheets (formato, escopo por módulo) quando SQL e Python estiverem prontos.
-- Execução da auditoria de links/README antes da divulgação oficial no LinkedIn (a seção de "estado atual" já foi escrita).
+- Repetir a auditoria de links/README perto da divulgação oficial no LinkedIn (a primeira foi feita em 30/09/2026).

@@ -36,7 +36,15 @@ Caso particular da analogia mestra — o reservatório é a etapa de armazenamen
 - `JOIN` → conecta canos de reservatórios diferentes
 - `GROUP BY` → agrupa a água em baldes por categoria
 
-**Status:** decidida. Módulo já está completo e publicado sem essa camada. Aplicação retroativa (reescrever os capítulos existentes incorporando a analogia) fica **explicitamente adiada até o módulo de Python terminar**, para não fragmentar o trabalho entre conteúdo novo e revisão de conteúdo antigo ao mesmo tempo.
+**Status:** decidida e aplicada retroativamente nos capítulos 1 a 5 do módulo (29/09/2026). Os capítulos seguintes não esticam a analogia de água: cada um ganhou uma analogia própria, listada abaixo.
+
+Analogias de capítulo aplicadas no retrofit (independentes da de reservatório e válvula):
+- **Capítulo 4 (agregação)** → gancho "a união faz a força", emendado com os baldes do `GROUP BY`.
+- **Capítulo 6 (CRUD)** → formulário e editor de texto: criar tabela é criar um formulário novo; `UPDATE` sem `WHERE` é "localizar e substituir" sem restringir a busca; `DELETE` sem `WHERE` é Ctrl+A + Delete e salvar por cima.
+- **Capítulo 7 (subqueries)** → Inception: o "kick" começa no sonho mais profundo e sobe camada por camada, como o banco resolvendo de dentro pra fora; aninhar demais é cair no limbo.
+- **Capítulo 8 (CTE)** → contato salvo no celular: salvar com um nome curto em vez de redigitar o número; salvar o contato não faz a ligação completar mais rápido (legibilidade, não performance). DNS citado só em nota de rodapé.
+- **Capítulo 9 (window functions)** → só um gancho de abertura com "Paisagem da Janela" (Lô Borges e Fernando Brant, Clube da Esquina) e o ditado "os olhos são a janela da alma" virado do avesso. Não vira fio condutor do capítulo.
+- **Matrioska** → reservada pra quando CTE recursiva virar conteúdo de verdade (repetição, não camadas empilhadas). Não usar em subquery nem em CTE comum.
 
 ## 3. Módulo `3-python/`: caixa de ferramentas
 
