@@ -1,5 +1,7 @@
 # SQL na prática: window functions
 
+Tem uma música do Clube da Esquina, "Paisagem da Janela", do Lô Borges e do Fernando Brant, que é basicamente alguém olhando o mundo lá fora pela janela do quarto. O que isso tem a ver com window function? Nada, fora que as duas passam por uma janela (*window*, em inglês). E se dizem que os olhos são a janela da alma, aqui é o contrário: a janela não serve pra olhar pra dentro, serve pra ver o que está em volta sem sair de onde você está.
+
 Imagina uma turma de alunos, cada um com uma nota numa prova. Se eu rodar `GROUP BY turma` com `AVG(nota)`, o resultado me dá um número só por turma: a média. Ótimo, se é só isso que eu preciso. Mas repara no que eu perco no caminho: depois de agrupar, não sobra mais nenhuma linha individual de aluno, só o resumo do grupo inteiro. Se a pergunta fosse "qual a nota de cada aluno, e qual a média da turma dele, lado a lado, na mesma linha", `GROUP BY` sozinho não responde. Ele esmaga a linha do aluno assim que agrupa, e não tem como voltar atrás dentro da mesma consulta.
 
 Isso não é novidade nesse repositório. Lá no capítulo de agregação, quando calculamos quanto cada cliente gastou no total, ficou um gancho pendente: existe um jeito de calcular esse tipo de métrica sem perder a linha individual de cada pedido? Existe, e esse capítulo resolve exatamente isso: window function.
