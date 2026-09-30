@@ -4,6 +4,8 @@ No capítulo anterior a gente aprendeu a juntar tabela com tabela usando `JOIN`.
 
 ## CREATE TABLE: criando uma tabela do zero
 
+Criar uma tabela é como criar um formulário novo. Antes de chegar qualquer resposta, você define os campos que ele vai ter: nome, e-mail, nota. Os campos existem, mas ainda estão todos vazios, esperando a primeira resposta.
+
 Toda tabela que a gente usou até aqui (`clientes`, `pedidos`, `produtos`) já vinha pronta, como se tivesse surgido do nada. Na prática, alguém precisou definir a estrutura dela antes de qualquer linha existir: quais colunas ela tem, e que tipo de dado cada coluna guarda. É pra isso que existe o `CREATE TABLE`.
 
 Vamos criar uma tabela nova pra loja: `avaliacoes`, guardando a avaliação que um cliente deixa sobre um produto que comprou.
@@ -56,7 +58,7 @@ WHERE id_pedido = 102;
 
 `UPDATE` diz qual tabela alterar, `SET` diz qual coluna muda e pra qual valor novo, e `WHERE` diz qual linha (ou linhas) recebe essa mudança.
 
-E aqui vale um alerta sério: o `WHERE` não é opcional na prática, mesmo sendo opcional na sintaxe. Se eu rodasse esse mesmo `UPDATE` sem o `WHERE`, o banco não erraria, não perguntaria "tem certeza?", ele simplesmente aplicaria `valor_total = 95.00` em toda linha da tabela `pedidos`, apagando de vez o valor correto que existia em cada uma. `UPDATE` sem `WHERE` altera a tabela inteira, sempre.
+E aqui vale um alerta sério: o `WHERE` não é opcional na prática, mesmo sendo opcional na sintaxe. Se eu rodasse esse mesmo `UPDATE` sem o `WHERE`, o banco não erraria, não perguntaria "tem certeza?", ele simplesmente aplicaria `valor_total = 95.00` em toda linha da tabela `pedidos`, apagando de vez o valor correto que existia em cada uma. É como usar o "localizar e substituir" num documento inteiro, sem restringir a busca ao trecho que você queria corrigir: ele troca tudo, inclusive o que não devia ser tocado. `UPDATE` sem `WHERE` altera a tabela inteira, sempre.
 
 ## DELETE: removendo linha
 
@@ -69,11 +71,11 @@ WHERE id_avaliacao = 1;
 
 Isso remove a avaliação que a gente acabou de inserir.
 
-Agora o alerta fica ainda mais sério do que no `UPDATE`. `DELETE` sem `WHERE` não altera a tabela inteira, ele apaga a tabela inteira, linha por linha, sem deixar rastro, sem confirmação, sem "tem certeza?". É provavelmente o erro mais perigoso e mais comum que quem tá começando em SQL comete: esquecer o `WHERE` num `DELETE` e, num segundo, perder um monte de dado que não tem como recuperar só rodando outro comando. Antes de rodar `UPDATE` ou `DELETE` de verdade, principalmente `DELETE`, vale sempre a pena reler o `WHERE` uma segunda vez, ou primeiro rodar um `SELECT` com aquele mesmo `WHERE`, só pra confirmar exatamente quais linhas vão ser afetadas antes de mudar de comando.
+Agora o alerta fica ainda mais sério do que no `UPDATE`. `DELETE` sem `WHERE` não altera a tabela inteira, ele apaga a tabela inteira, linha por linha, sem deixar rastro, sem confirmação, sem "tem certeza?". É provavelmente o erro mais perigoso e mais comum que quem tá começando em SQL comete: esquecer o `WHERE` num `DELETE` e, num segundo, perder um monte de dado que não tem como recuperar só rodando outro comando. Sabe aquele segundo de pânico quando você aperta Ctrl+A sem querer, depois Delete, e o documento inteiro some da tela? Agora imagina que, antes de perceber, você ainda salvou por cima. Não tem mais o que desfazer. `DELETE` sem `WHERE` é exatamente isso. Antes de rodar `UPDATE` ou `DELETE` de verdade, principalmente `DELETE`, vale sempre a pena reler o `WHERE` uma segunda vez, ou primeiro rodar um `SELECT` com aquele mesmo `WHERE`, só pra confirmar exatamente quais linhas vão ser afetadas antes de mudar de comando.
 
 ## Cuidado extra quando o assunto é alterar e apagar dado de verdade
 
-Vale abrir um parêntese curto aqui. Tudo que a gente viu nesse capítulo funciona, mas no mundo real, alterar ou apagar dado direto numa base de produção (aquela que o sistema de verdade usa, não um ambiente de teste) não costuma ser feito assim, no improviso. Existe prática de segurança em volta disso: testar o comando antes num ambiente separado, que existe justamente pra isso; ter backup recente, pra sempre existir um jeito de voltar atrás se algo sair errado; e pedir pra outra pessoa revisar o comando antes de rodar, principalmente quando ele muda muita linha de uma vez. Não vou entrar em detalhe de como cada uma dessas práticas funciona agora, só fica registrado que elas existem, e que existem por um motivo muito claro: `UPDATE` e `DELETE` não têm desfazer.
+Vale abrir um parêntese curto aqui. Pensa no cuidado que você teria antes de um "substituir tudo" ou de um "selecionar tudo" num documento importante, daqueles que não dá pra perder: testaria numa cópia antes, garantiria que tem backup, talvez pedisse pra alguém dar uma olhada. Com banco é o mesmo cuidado. Tudo que a gente viu nesse capítulo funciona, mas no mundo real, alterar ou apagar dado direto numa base de produção (aquela que o sistema de verdade usa, não um ambiente de teste) não costuma ser feito assim, no improviso. Existe prática de segurança em volta disso: testar o comando antes num ambiente separado, que existe justamente pra isso; ter backup recente, pra sempre existir um jeito de voltar atrás se algo sair errado; e pedir pra outra pessoa revisar o comando antes de rodar, principalmente quando ele muda muita linha de uma vez. Não vou entrar em detalhe de como cada uma dessas práticas funciona agora, só fica registrado que elas existem, e que existem por um motivo muito claro: `UPDATE` e `DELETE` não têm desfazer.
 
 ## Fechando esse capítulo
 
